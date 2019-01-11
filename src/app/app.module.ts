@@ -26,10 +26,7 @@ import {
   AccordionLinkDirective,
   AccordionDirective
 } from './core';
-import { PharmacyComponent } from './forms/pharmacy/pharmacy.component';
-import { DoctorsComponent } from './forms/doctors/doctors.component';
-import { FinanceComponent } from './forms/finance/finance.component';
-import { TriageComponent } from './forms/triage/triage.component';
+
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -47,10 +44,6 @@ export function createTranslateLoader(http: HttpClient) {
     AccordionAnchorDirective,
     AccordionLinkDirective,
     AccordionDirective,
-    PharmacyComponent,
-    DoctorsComponent,
-    FinanceComponent,
-    TriageComponent
   ],
   imports: [
     BrowserModule,
