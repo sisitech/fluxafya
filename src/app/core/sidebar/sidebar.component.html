@@ -75,42 +75,6 @@
         <li class="navigation-item">
             <hr />
         </li>
-        <li class="navigation-item">
-            <div class="navigation-title">Themes</div>
-        </li>
-        <li class="navigation-item" [ngClass]="{'open': options.theme === 'eclipse'}">
-            <a class="navigation-link" (click)="setTheme('eclipse')">
-                <i class="icon ion-ios-moon mr-3"></i>
-                <span class="title mr-auto">Eclipse</span>
-            </a>
-        </li>
-        <li class="navigation-item" [ngClass]="{'open': options.theme === 'winter'}">
-            <a class="navigation-link" (click)="setTheme('winter')">
-                <i class="icon ion-ios-snowy mr-3"></i>
-                <span class="title mr-auto">Winter</span>
-            </a>
-        </li>
-        <li class="navigation-item" [ngClass]="{'open': options.theme === 'spring'}">
-            <a class="navigation-link" (click)="setTheme('spring')">
-                <i class="icon ion-ios-flower mr-3"></i>
-                <span class="title mr-auto">Spring</span>
-            </a>
-        </li>
-        <li class="navigation-item" [ngClass]="{'open': options.theme === 'autumn'}">
-            <a class="navigation-link" (click)="setTheme('autumn')">
-                <i class="icon ion-ios-medical mr-3"></i>
-                <span class="title mr-auto">Autumn</span>
-            </a>
-        </li>
-        <li class="navigation-item" [ngClass]="{'open': options.theme === 'summer'}">
-            <a class="navigation-link" (click)="setTheme('summer')">
-                <i class="icon ion-ios-flame mr-3"></i>
-                <span class="title mr-auto">Summer</span>
-            </a>
-        </li>
-        <li class="navigation-item docked-hidden">
-            <hr />
-        </li>
         <li class="navigation-item docked-hidden">
             <div class="px-4 d-flex align-items-center">
                 <select class="custom-select" [(ngModel)]="options.lang" #langSelect="ngModel" (ngModelChange)="translate.use(options.lang)" placeholder="Select language" style="min-width: 100%;">
