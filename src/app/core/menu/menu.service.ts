@@ -54,13 +54,11 @@ const MENUITEMS = [
         state: 'register',
         name: 'Patient Registration',
         type:'link',
-        icon:'ion-ios-person'
       },
       {
         state: '',
         name: 'Registered Patients',
         type:'link',
-        icon:''
       }
     ]
   },
@@ -75,7 +73,7 @@ const MENUITEMS = [
     state: 'triage',
     name: 'Triage Station',
     type: 'sub',
-    icon: 'ion-ios-people',
+    icon: 'ion-ios-help',
     children: [
       {
         state: '',
@@ -102,7 +100,7 @@ const MENUITEMS = [
     state: 'finance',
     name: 'Finance',
     type: 'sub',
-    icon: 'ion-ios-people',
+    icon: 'ion-ios-list',
     children: [
       {
         state: '',
@@ -156,7 +154,7 @@ const MENUITEMS = [
     state: 'pharmacy',
     name: 'Pharmacy',
     type: 'sub',
-    icon: 'ion-ios-people',
+    icon: 'ion-ios-box',
     children: [
       {
         state: '',
@@ -183,7 +181,7 @@ const MENUITEMS = [
     state: 'account',
     name: 'ACCOUNT',
     type: 'sub',
-    icon: 'ion-ios-people',
+    icon: 'ion-ios-person',
     children: [
       {
         state: 'signin',
