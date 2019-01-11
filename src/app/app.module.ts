@@ -26,6 +26,8 @@ import {
   AccordionLinkDirective,
   AccordionDirective
 } from './core';
+import { PatientsComponent } from './doctors/patients/patients.component';
+import { RegistrationComponent } from './patients/registration/registration.component';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -44,6 +46,8 @@ export function createTranslateLoader(http: HttpClient) {
     AccordionAnchorDirective,
     AccordionLinkDirective,
     AccordionDirective,
+    PatientsComponent,
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule,
