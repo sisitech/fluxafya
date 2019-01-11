@@ -44,6 +44,18 @@ const MENUITEMS = [
     type: 'title',
     name: 'Customer Registration'
   },
+  {
+    state: 'registration',
+    name: 'Registration',
+    type: 'link',
+    icon: 'ion-ios-person'
+  },
+  {
+    state: 'customers',
+    name: 'Customers (waiting)',
+    type: 'link',
+    icon: 'ion-ios-people'
+  },
   // {
   //   state: 'email',
   //   name: 'EMAIL',
@@ -81,6 +93,19 @@ const MENUITEMS = [
     type: 'title',
     name: 'Triage Module'
   },
+  {
+    state: 'customers',
+    name: 'Customers (waiting)',
+    type: 'link',
+    icon: 'ion-ios-people'
+  },
+  {
+    state: 'triage',
+    name: 'Triage form',
+    type: 'link',
+    icon: 'ion-ios-people'
+  },
+  
   // {
   //   state: 'components',
   //   name: 'COMPONENTS',
@@ -228,6 +253,18 @@ const MENUITEMS = [
     type: 'title',
     name: 'Finance Module'
   },
+  {
+    state: 'customers',
+    name: 'Customers (waiting)',
+    type: 'link',
+    icon: 'ion-ios-people'
+  },
+  {
+    state: 'triage',
+    name: 'Finance form',
+    type: 'link',
+    icon: 'ion-ios-people'
+  },
   // {
   //   state: 'datatable',
   //   name: 'DATATABLES',
@@ -318,56 +355,16 @@ const MENUITEMS = [
     name: 'Doctors Module'
   },
   {
-    state: 'account',
-    name: 'ACCOUNT',
-    type: 'sub',
-    icon: 'ion-ios-people',
-    children: [
-      {
-        state: 'signin',
-        name: 'SIGNIN'
-      },
-      {
-        state: 'signup',
-        name: 'SIGNUP'
-      },
-      {
-        state: 'forgot',
-        name: 'FORGOT'
-      },
-      {
-        state: 'lockscreen',
-        name: 'LOCKSCREEN'
-      }
-    ]
+    state: 'customers',
+    name: 'Customers (waiting)',
+    type: 'link',
+    icon: 'ion-ios-people'
   },
   {
-    state: 'pages',
-    name: 'PAGES',
-    type: 'sub',
-    icon: 'ion-ios-folder',
-    children: [
-      {
-        state: 'forum',
-        name: 'FORUM'
-      },
-      {
-        state: 'timeline',
-        name: 'TIMELINE'
-      },
-      {
-        state: 'activity',
-        name: 'ACTIVITY'
-      },
-      {
-        state: 'pricing',
-        name: 'PRICING'
-      },
-      {
-        state: 'blank',
-        name: 'BLANK'
-      }
-    ]
+    state: 'triage',
+    name: 'Triage form',
+    type: 'link',
+    icon: 'ion-ios-people'
   },
   {
     type: 'divider',
@@ -377,28 +374,16 @@ const MENUITEMS = [
     name: 'Pharmacy Module'
   },
   {
-    state: 'account',
-    name: 'ACCOUNT',
-    type: 'sub',
-    icon: 'ion-ios-people',
-    children: [
-      {
-        state: 'signin',
-        name: 'SIGNIN'
-      },
-      {
-        state: 'signup',
-        name: 'SIGNUP'
-      },
-      {
-        state: 'forgot',
-        name: 'FORGOT'
-      },
-      {
-        state: 'lockscreen',
-        name: 'LOCKSCREEN'
-      }
-    ]
+    state: 'customers',
+    name: 'Customers (waiting)',
+    type: 'link',
+    icon: 'ion-ios-people'
+  },
+  {
+    state: 'triage',
+    name: 'Triage form',
+    type: 'link',
+    icon: 'ion-ios-people'
   },
   {
     type: 'divider',
