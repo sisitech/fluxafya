@@ -8,17 +8,17 @@ export const DoctorsRoutes: Routes = [
     path: '',
     children: [
       {
-        path: '',
+        path: 'see-patient',
         component: DoctorsComponent,
         data: {
-          heading: 'Patients in Queue'
+          heading: 'Treatment'
         }
       },
       {
-        path: 'record',
+        path: '',
         component: PatientsComponent,
         data: {
-          heading: 'Patients'
+          heading: 'Patients in Queue'
         }
       }
     ]
