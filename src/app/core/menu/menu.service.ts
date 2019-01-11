@@ -64,7 +64,7 @@ const MENUITEMS = [
     name: 'Triage Module'
   },
   {
-    state: 'customers',
+    state: 'triage',
     name: 'Customers (waiting)',
     type: 'link',
     icon: 'ion-ios-people'
