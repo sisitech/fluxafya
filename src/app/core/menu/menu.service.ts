@@ -45,7 +45,7 @@ const MENUITEMS = [
     name: 'Customer Registration'
   },
   {
-    state: 'registration',
+    state: 'patients',
     name: 'Registration',
     type: 'link',
     icon: 'ion-ios-person'

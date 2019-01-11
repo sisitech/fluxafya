@@ -67,6 +67,10 @@ export const AppRoutes: Routes = [
       {
         path: 'docs',
         loadChildren: './docs/docs.module#DocsModule'
+      }, 
+      {
+        path: 'patients',
+        loadChildren: './patients/patients.module#PatientsModule'
       }
     ]
   },
