@@ -8,17 +8,17 @@ export const TriageRoutes: Routes = [
     path: '',
     children: [
       {
-        path: '',
-        component: PatientsComponent,
-        data: {
-          heading: 'Patients in Queue'
-        }
-      },
-      {
-        path: 'record',
+        path: 'see-patient',
         component: TriageComponent,
         data: {
           heading: 'Record Patient\'s vitals'
+        }
+      },
+      {
+        path: '**',
+        component: PatientsComponent,
+        data: {
+          heading: 'Patients in Queue'
         }
       }
     ]

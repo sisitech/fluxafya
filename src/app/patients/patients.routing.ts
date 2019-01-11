@@ -8,14 +8,14 @@ export const PatientsRoutes: Routes = [
     path: '',
     children: [
       {
-        path: 'registration',
+        path: 'register',
         component: RegistrationComponent,
         data: {
           heading: 'Patient Registration'
         }
       },
       {
-        path: '',
+        path: '**',
         component: PatientsComponent,
         data: {
           heading: 'Patients'

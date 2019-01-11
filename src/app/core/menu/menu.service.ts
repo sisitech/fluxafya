@@ -46,15 +46,23 @@ const MENUITEMS = [
   },
   {
     state: 'patients',
-    name: 'Registration',
-    type: 'link',
-    icon: 'ion-ios-person'
-  },
-  {
-    state: 'customers',
-    name: 'Customers (waiting)',
-    type: 'link',
-    icon: 'ion-ios-people'
+    name: 'Reception',
+    type: 'sub',
+    icon: 'ion-ios-person',
+    children: [
+      {
+        state: 'register',
+        name: 'Patient Registration',
+        type:'link',
+        icon:'ion-ios-person'
+      },
+      {
+        state: '',
+        name: 'Registered Patients',
+        type:'link',
+        icon:''
+      }
+    ]
   },
   {
     type: 'divider',
@@ -65,16 +73,30 @@ const MENUITEMS = [
   },
   {
     state: 'triage',
-    name: 'Customers (waiting)',
-    type: 'link',
-    icon: 'ion-ios-people'
+    name: 'Triage Station',
+    type: 'sub',
+    icon: 'ion-ios-people',
+    children: [
+      {
+        state: '',
+        name: 'Patients',
+        type:'link',
+        icon:''
+      },
+      {
+        state: 'see-patient',
+        name: 'Triage form',
+        type:'link',
+        icon:''
+      }
+    ]
   },
-  {
-    state: 'triage',
-    name: 'Triage form',
-    type: 'link',
-    icon: 'ion-ios-people'
-  },
+  // {
+  //   state: 'triage',
+  //   name: 'Triage form',
+  //   type: 'link',
+  //   icon: 'ion-ios-people'
+  // },
   {
     type: 'divider'
   },
