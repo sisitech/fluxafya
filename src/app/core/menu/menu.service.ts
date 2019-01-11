@@ -83,13 +83,13 @@ const MENUITEMS = [
     name: 'Finance Module'
   },
   {
-    state: 'customers',
+    state: 'finance',
     name: 'Customers (waiting)',
     type: 'link',
     icon: 'ion-ios-people'
   },
   {
-    state: 'triage',
+    state: 'finance',
     name: 'Finance form',
     type: 'link',
     icon: 'ion-ios-people'
@@ -102,14 +102,14 @@ const MENUITEMS = [
     name: 'Doctors Module'
   },
   {
-    state: 'customers',
+    state: 'doctors',
     name: 'Customers (waiting)',
     type: 'link',
     icon: 'ion-ios-people'
   },
   {
     state: 'triage',
-    name: 'Triage form',
+    name: 'Doctors form',
     type: 'link',
     icon: 'ion-ios-people'
   },
@@ -121,14 +121,14 @@ const MENUITEMS = [
     name: 'Pharmacy Module'
   },
   {
-    state: 'customers',
+    state: 'pharmacy',
     name: 'Customers (waiting)',
     type: 'link',
     icon: 'ion-ios-people'
   },
   {
-    state: 'triage',
-    name: 'Triage form',
+    state: 'pharmacy',
+    name: 'Pharmacy form',
     type: 'link',
     icon: 'ion-ios-people'
   },

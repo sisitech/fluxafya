@@ -75,6 +75,18 @@ export const AppRoutes: Routes = [
       {
         path: 'triage',
         loadChildren: './triage/triage.module#TriageModule'
+      },
+      {
+        path: 'finance',
+        loadChildren: './finance/finance.module#FinanceModule'
+      },
+      {
+        path: 'doctors',
+        loadChildren: './doctors/doctors.module#DoctorsModule'
+      },
+      {
+        path: 'pharmacy',
+        loadChildren: './pharmacy/pharmacy.module#PharmacyModule'
       }
     ]
   },
