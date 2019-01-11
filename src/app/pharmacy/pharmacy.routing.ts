@@ -8,14 +8,14 @@ export const PharmacyRoutes: Routes = [
     path: '',
     children: [
       {
-        path: 'record',
+        path: 'see-patient',
         component: PharmacyComponent,
         data: {
           heading: 'Medical Prescription'
         }
       },
       {
-        path: '',
+        path: '**',
         component: PatientsComponent,
         data: {
           heading: 'Patients in Queue'

@@ -15,7 +15,7 @@ export const DoctorsRoutes: Routes = [
         }
       },
       {
-        path: '',
+        path: '**',
         component: PatientsComponent,
         data: {
           heading: 'Patients in Queue'

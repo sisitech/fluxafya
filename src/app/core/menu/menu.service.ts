@@ -91,12 +91,6 @@ const MENUITEMS = [
       }
     ]
   },
-  // {
-  //   state: 'triage',
-  //   name: 'Triage form',
-  //   type: 'link',
-  //   icon: 'ion-ios-people'
-  // },
   {
     type: 'divider'
   },
@@ -106,15 +100,23 @@ const MENUITEMS = [
   },
   {
     state: 'finance',
-    name: 'Customers (waiting)',
-    type: 'link',
-    icon: 'ion-ios-people'
-  },
-  {
-    state: 'finance',
-    name: 'Finance form',
-    type: 'link',
-    icon: 'ion-ios-people'
+    name: 'Finance',
+    type: 'sub',
+    icon: 'ion-ios-people',
+    children: [
+      {
+        state: '',
+        name: 'Patients',
+        type: 'link',
+        icon: 'ion-ios-people'
+      },
+      {
+        state: 'see-patient',
+        name: 'Finance form',
+        type: 'link',
+        icon: 'ion-ios-people'
+      }
+    ]
   },
   {
     type: 'divider'
@@ -125,15 +127,23 @@ const MENUITEMS = [
   },
   {
     state: 'doctors',
-    name: 'Customers (waiting)',
-    type: 'link',
-    icon: 'ion-ios-people'
-  },
-  {
-    state: 'triage',
-    name: 'Doctors form',
-    type: 'link',
-    icon: 'ion-ios-people'
+    name: 'Doctors',
+    type: 'sub',
+    icon: 'ion-ios-people',
+    children: [
+      {
+        state: '',
+        name: 'Patients',
+        type: 'link',
+        icon: 'ion-ios-people'
+      },
+      {
+        state: 'see-patient',
+        name: 'Doctor\'s form',
+        type: 'link',
+        icon: 'ion-ios-people'
+      }
+    ]
   },
   {
     type: 'divider',
@@ -144,15 +154,23 @@ const MENUITEMS = [
   },
   {
     state: 'pharmacy',
-    name: 'Customers (waiting)',
-    type: 'link',
-    icon: 'ion-ios-people'
-  },
-  {
-    state: 'pharmacy',
-    name: 'Pharmacy form',
-    type: 'link',
-    icon: 'ion-ios-people'
+    name: 'Pharmacy',
+    type: 'sub',
+    icon: 'ion-ios-people',
+    children: [
+      {
+        state: '',
+        name: 'Patients',
+        type: 'link',
+        icon: 'ion-ios-people'
+      },
+      {
+        state: 'see-patient',
+        name: 'Pharmacy\'s form',
+        type: 'link',
+        icon: 'ion-ios-people'
+      }
+    ]
   },
   {
     type: 'divider',
