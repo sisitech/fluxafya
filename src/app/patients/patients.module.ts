@@ -6,6 +6,7 @@ import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { RegistrationComponent } from './registration/registration.component';
 import { PatientsRoutes } from './patients.routing';
+import { PatientsComponent } from './patients/patients.component';
 
 @NgModule({
   imports: [
@@ -13,6 +14,6 @@ import { PatientsRoutes } from './patients.routing';
     RouterModule.forChild(PatientsRoutes),
     NgbAccordionModule
   ],
-  declarations: [RegistrationComponent]
+  declarations: [RegistrationComponent, PatientsComponent]
 })
 export class PatientsModule {}
