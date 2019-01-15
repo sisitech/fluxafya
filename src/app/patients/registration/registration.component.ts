@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationComponent implements OnInit {
 
+	searchClicked:boolean = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  searchPatient(){
+  	this.searchClicked = true;
   }
 
 }
