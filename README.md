@@ -1,4 +1,6 @@
-# FluxAfya - Digital Medical Histories Repository
+# FluxAfya 
+
+###Digital Medical Histories Repository
 
 This project is an Angular `version 1.6.5` [Angular CLI](https://github.com/angular/angular-cli),  build to consume a pre-build Medical Application API
 
