@@ -6,10 +6,15 @@ import { AuthLayoutComponent } from './core';
 export const AppRoutes: Routes = [
   {
     path: '',
+    redirectTo: 'account',
+    pathMatch: 'full',
+  }, 
+  {
+    path: '',
     component: AdminLayoutComponent,
     children: [
       {
-        path: '',
+        path: 'dashboard',
         loadChildren: './dashboard/dashboard.module#DashboardModule'
       },
       {
