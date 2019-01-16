@@ -8,6 +8,7 @@ pipelines:
           - pwd
           - ls -al
           - npm install @angular/cli -g
+          - ng config -g cli.warnings.versionMismatch false
           - npm install
           - ng build --prod
     - step:
@@ -15,5 +16,5 @@ pipelines:
         deployment: test
         script:
           - echo "Deploying to test environment - beta.fluxafya.com"
-          - git push ssh:sisitec@web566.webfaction.com:/home/sisitec/webapps/fluxafya/.git HEAD
+          - git push ssh://sisitec@web566.webfaction.com:/home/sisitec/webapps/fluxafya/.git HEAD
         
