@@ -11,7 +11,7 @@ pipelines:
         caches:
           - node
         script: # Modify the commands below to build your repository.
-          - pwd
-          - ls -al
+          - npm install @angular/cli -g
           - npm install
-          - npm test
+          - ng test --watch=false
+          - ng build --prod
