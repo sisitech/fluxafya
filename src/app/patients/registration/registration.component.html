@@ -1,14 +1,16 @@
 <div class="card">
     <div class="card-header">Basic Information</div>
     <div class="card-body">
-       <div class="form-group row">
-            <label for="staticEmail" class="col-sm-2 col-form-label">Phone/ ID number</label>
+        <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Phone / ID number</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="staticEmail" placeholder="33012902">
             </div>
             <br><br>
-            <button (click)="searchPatient()" class="btn btn-primary">Search</button>
-        </div> 
+            <div class="col-sm-2">
+                <button (click)="searchPatient()" class="btn btn-primary">Search</button>
+            </div>
+        </div>
     </div>
 </div>
 <div *ngIf="searchClicked">
