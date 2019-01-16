@@ -16,5 +16,5 @@ pipelines:
         deployment: test
         script:
           - echo "Deploying to test environment - beta.fluxafya.com"
-          - git push ssh://sisitec@web566.webfaction.com:/home/sisitec/webapps/fluxafya/.git HEAD
+          - git push ssh://sisitec@web566.webfaction.com:/home/sisitec/webapps/fluxafya/.git HEAD -v
         
