@@ -8,8 +8,6 @@ image: node:11.6.0
 pipelines:
   default:
     - step:
-        caches:
-          - node
         script: # Modify the commands below to build your repository.
           - pwd
           - ls - al
