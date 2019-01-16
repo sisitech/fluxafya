@@ -8,6 +8,11 @@ import { LockscreenComponent } from './lockscreen/lockscreen.component';
 export const AccountRoutes: Routes = [
   {
     path: '',
+    redirectTo: 'signin',
+    pathMatch: 'full',
+  }, 
+  {
+    path: '',
     children: [
       {
         path: 'signin',
