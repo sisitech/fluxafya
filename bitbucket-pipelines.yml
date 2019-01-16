@@ -13,5 +13,4 @@ pipelines:
           - ls -al
           - npm install @angular/cli -g
           - npm install
-          - ng test --watch=false
           - ng build --prod
