@@ -12,7 +12,7 @@ pipelines:
           - node
         script: # Modify the commands below to build your repository.
           - pwd
-          - ls al
+          - ls - al
           - npm install @angular/cli -g
           - npm install
           - ng test --watch=false
