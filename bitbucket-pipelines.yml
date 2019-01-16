@@ -14,3 +14,10 @@ pipelines:
           - npm install @angular/cli -g
           - npm install
           - ng build --prod
+    - step:
+      name: Deploy to Webfaction
+      deployment: test   # can be test, staging or production.
+      # trigger: manual  # Uncomment to make this a manual deployment.
+      script:
+        - echo "Deploying to test environment - beta.fluxafya.com"
+        - git push ssh:sisitec@web566.webfaction.com:/home/sisitec/webapps/fluxafya/.git HEAD
