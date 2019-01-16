@@ -10,9 +10,7 @@ export class DoctorsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {}
-
-  	
-
-	
-
+}
+function finishFunction(){
+  // do nothing
 }
