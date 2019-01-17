@@ -319,6 +319,5 @@ export class MenuService {
 
       return RECEPTIONISTMENUITEMS;
     }
-    //return MENUITEMS;
   }
 }
