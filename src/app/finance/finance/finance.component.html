@@ -1,60 +1,62 @@
-<div class="card">
-    <div class="card-body">Welcome <b>Dennis Sigei,</b></div>
-</div>
-<div class="card">
-    <div class="card-header">Payment Information</div>
-    <div class="card-body">
-        <div class="form-group row">
-            <label for="staticEmail" class="col-sm-2 col-form-label">Choose Payment Service</label>
-            <div class="col-sm-10">
-                <select class="form-control" id="sel1">
+<div class="shorten-cards">
+    <div class="card">
+        <div class="card-body">Welcome <b>Dennis Sigei,</b></div>
+    </div>
+    <div class="card">
+        <div class="card-header">Payment Information</div>
+        <div class="card-body">
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Choose Payment Service</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="sel1">
                     <option>Choose option</option>
                     <option>Laboratory services</option>
                     <option>Consultancy Fees</option>
                     <option>Pharmacy</option>
                 </select>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="card">
-    <div class="card-header">Mode of Payment</div>
-    <div class="card-body">
-        <div class="form-group row">
-            <label for="staticEmail" class="col-sm-2 col-form-label">Mode of Payment</label>
-            <div class="col-sm-10">
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                    <label class="form-check-label" for="inlineRadio1">M-PESA</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                    <label class="form-check-label" for="inlineRadio2">VISA</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                    <label class="form-check-label" for="inlineRadio2">CASH</label>
+    <div class="card">
+        <div class="card-header">Mode of Payment</div>
+        <div class="card-body">
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Mode of Payment</label>
+                <div class="col-sm-10">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <label class="form-check-label" for="inlineRadio1">M-PESA</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">VISA</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">CASH</label>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <label for="staticEmail" class="col-sm-2 col-form-label">Insurance Policy</label>
-            <div class="col-sm-10">
-                <select class="form-control" id="sel1">
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Insurance Policy</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="sel1">
                     <option>Choose Insurer</option>
                     <option>Jubilee Insurance</option>
                     <option>UAP Insurance</option>
                 </select>
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <label for="staticEmail" class="col-sm-2 col-form-label">Insurance Policy Number</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="staticEmail" placeholder="">
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Insurance Policy Number</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="staticEmail" placeholder="">
+                </div>
             </div>
         </div>
     </div>
+    <a [routerLink]="['/doctors/see-patient']">
+        <button type="button" class="btn btn-primary">Send to Doctor</button>
+    </a>
 </div>
-<a [routerLink]="['/doctors/see-patient']">
-    <button type="button" class="btn btn-primary">Send to Doctor</button>
-</a>

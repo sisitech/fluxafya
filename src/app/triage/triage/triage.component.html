@@ -1,65 +1,67 @@
-<div class="card">
-    <div class="card-body">Welcome <b>Dennis Sigei,</b></div>
-</div>
-<div class="card">
-    <div class="card-header">Measure of patient's vitals</div>
+<div class="shorten-cards">
+    <div class="card">
+        <div class="card-body">Welcome <b>Dennis Sigei,</b></div>
+    </div>
+    <div class="card">
+        <div class="card-header">Measure of patient's vitals</div>
 
-    <div class="card-body">
-        <div class="form-group row">
-            <label for="staticEmail" class="col-sm-2 col-form-label">Weight</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="staticEmail" placeholder="80 Kgs">
+        <div class="card-body">
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Weight</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="staticEmail" placeholder="80 Kgs">
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <label for="staticEmail" class="col-sm-2 col-form-label">Temperature</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="staticEmail" placeholder="30">
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Temperature</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="staticEmail" placeholder="30">
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <label for="staticEmail" class="col-sm-2 col-form-label">Blood Pressure</label>
-            <div class="col-sm-5">
-                <input type="text" class="form-control" id="staticEmail" placeholder="Systolic">
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Blood Pressure</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" id="staticEmail" placeholder="Systolic">
+                </div>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" id="staticEmail" placeholder="Diastolic">
+                </div>
             </div>
-            <div class="col-sm-5">
-                <input type="text" class="form-control" id="staticEmail" placeholder="Diastolic">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="staticEmail" class="col-sm-2 col-form-label">Allergies</label>
-            <div class="col-sm-10">
-                <textarea name="" class="form-control" id="" cols="30" rows="8"></textarea>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="card">
-    <div class="card-header">Symptoms summary</div>
-    <div class="card-body">
-        <div class="form-group row">
-            <label for="staticEmail" class="col-sm-2 col-form-label">Symptoms summary</label>
-            <div class="col-sm-10">
-                <textarea name="" class="form-control" id="" cols="30" rows="8"></textarea>
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Allergies</label>
+                <div class="col-sm-10">
+                    <textarea name="" class="form-control" id="" cols="30" rows="8"></textarea>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="card">
-    <div class="card-header">Priority</div>
-    <div class="card-body">
-        <div class="form-group row">
-            <label for="staticEmail" class="col-sm-2 col-form-label">Patient Urgency</label>
-            <div class="col-sm-10">
-                <select name="" class="form-control" id="">
+    <div class="card">
+        <div class="card-header">Symptoms summary</div>
+        <div class="card-body">
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Symptoms summary</label>
+                <div class="col-sm-10">
+                    <textarea name="" class="form-control" id="" cols="30" rows="8"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">Priority</div>
+        <div class="card-body">
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Patient Urgency</label>
+                <div class="col-sm-10">
+                    <select name="" class="form-control" id="">
                     <option>-----</option>
                     <option>Normal</option>
                     <option>High</option>
                 </select>
+                </div>
             </div>
         </div>
     </div>
+    <a [routerLink]="['/finance/see-patient']">
+        <button type="button" class="btn btn-primary">Send to Cashier</button>
+    </a>
 </div>
-<a [routerLink]="['/finance/see-patient']">
-    <button type="button" class="btn btn-primary">Send to Cashier</button>
-</a>
