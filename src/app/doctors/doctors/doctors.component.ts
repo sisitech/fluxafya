@@ -11,8 +11,8 @@ export class DoctorsComponent implements OnInit {
 
   ngOnInit() {}
 
-  	
-
-	
-
+  finishFunction():void {
+    // do nothing
+    console.log('Ok Doc')
+  }
 }
