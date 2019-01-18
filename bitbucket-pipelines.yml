@@ -3,14 +3,14 @@ image: node:11.6.0
 
 pipelines:
   default:
-    - step:
-        script: # Modify the commands below to build your repository.
-          - pwd
-          - ls -al
-          - npm install @angular/cli -g
-          - ng config -g cli.warnings.versionMismatch false
-          - npm install
-          - ng build --prod
+    # - step:
+    #     script: # Modify the commands below to build your repository.
+    #       - pwd
+    #       - ls -al
+    #       - npm install @angular/cli -g
+    #       - ng config -g cli.warnings.versionMismatch false
+    #       - npm install
+    #       - ng build --prod
     # - step:
     #     name: Deploy to test
     #     deployment: test
