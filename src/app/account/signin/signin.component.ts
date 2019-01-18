@@ -54,13 +54,13 @@ export class SigninComponent implements OnInit {
     for(let a=0; a < this.USERS.length; a++){
       if(email == this.USERS[a].username && password == this.USERS[a].password){
         console.log('great')
-        this.success = 'Successfully Logged In';
+        this.success = 'Successfully logged in ... ';
         localStorage.setItem('userProfile', JSON.stringify(this.USERS[a]));
         this.router.navigate(['/dashboard'])
         return;
       }else{
         console.log('wrong')
-        this.error = 'Wrong Email/Password Combination',
+        this.error = 'Wrong email-password combination',
         this.router.navigate(['/account/signin'])
       }
     }
