@@ -374,6 +374,140 @@ const PHARMACY = [
   }
 ];
 
+const FINANCE = [
+  {
+    type: 'title',
+    name: 'MAIN'
+  },
+  {
+    state: '/',
+    name: 'HOME',
+    type: 'link',
+    icon: 'ion-ios-speedometer'
+  },
+  {
+    state: 'docs',
+    name: 'DOCS',
+    type: 'link',
+    icon: 'ion-ios-help'
+  },
+  {
+    type: 'divider'
+  },
+  {
+    type: 'title',
+    name: 'Patients'
+  },
+  {
+    state: 'finance',
+    name: 'Patients',
+    type: 'link',
+    icon: 'ion-ios-people'
+  },
+  {
+    type: 'divider'
+  },
+  {
+    type: 'title',
+    name: 'Account'
+  },
+  {
+    state: 'profile',
+    name: 'Profile',
+    type: 'link',
+    icon: 'ion-ios-contact'
+  },
+  {
+    state: 'account/change-password',
+    name: 'Change Password',
+    type: 'extLink',
+    icon: 'ion-ios-shuffle'
+  },
+  {
+    state: 'account/lockscreen',
+    name: 'Lockscreen',
+    type: 'extLink',
+    icon: 'ion-ios-locked'
+  }
+];
+
+const RECFINANCE = [
+  {
+    type: 'title',
+    name: 'MAIN'
+  },
+  {
+    state: '/',
+    name: 'HOME',
+    type: 'link',
+    icon: 'ion-ios-speedometer'
+  },
+  {
+    state: 'docs',
+    name: 'DOCS',
+    type: 'link',
+    icon: 'ion-ios-help'
+  },
+  {
+    type: 'divider'
+  },
+  {
+    type: 'title',
+    name: 'Patients'
+  },
+  {
+    state: 'patients/register',
+    name: 'Register',
+    type: 'extLink',
+    icon: 'ion-document'
+  },
+  {
+    state: 'patients',
+    name: 'Patients',
+    type: 'link',
+    icon: 'ion-ios-people'
+  },
+  {
+    type: 'divider'
+  },
+  {
+    type: 'title',
+    name: 'Finance'
+  },
+  {
+    state: 'finance',
+    name: 'Patients',
+    type: 'link',
+    icon: 'ion-ios-people'
+  },
+  {
+    type: 'divider'
+  },
+  {
+    type: 'title',
+    name: 'Account'
+  },
+  {
+    state: 'profile',
+    name: 'Profile',
+    type: 'link',
+    icon: 'ion-ios-contact'
+  },
+  {
+    state: 'account/change-password',
+    name: 'Change Password',
+    type: 'extLink',
+    icon: 'ion-ios-shuffle'
+  },
+  {
+    state: 'account/lockscreen',
+    name: 'Lockscreen',
+    type: 'extLink',
+    icon: 'ion-ios-locked'
+  }
+];
+
+
 @Injectable()
 export class MenuService {
 
@@ -385,10 +519,19 @@ export class MenuService {
       return MENUITEMS;
 
     } else if(profile.role == 'R'){
+      
       return RECEPTIONISTMENUITEMS;
 
     } else if (profile.role == 'PH') {
+      
       return PHARMACY;
+
+    } else if (profile.role == 'F') {
+      
+      return FINANCE;
+
+    } else if (profile.role == 'RF') {
+      return RECFINANCE;
     }
   }
 }
