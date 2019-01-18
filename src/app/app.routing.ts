@@ -96,6 +96,10 @@ export const AppRoutes: Routes = [
       {
         path: 'ext-patient',
         loadChildren: './ext-patient/ext-patient.module#ExtPatientModule'
+      }, 
+      {
+        path: 'profile',
+        loadChildren: './social/social.module#SocialModule'
       }
     ]
   },

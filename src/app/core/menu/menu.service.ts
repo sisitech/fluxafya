@@ -342,7 +342,7 @@ const PHARMACY = [
     name: 'Patients'
   },
   {
-    state: '',
+    state: 'pharmacy',
     name: 'Patients',
     type: 'link',
     icon: 'ion-ios-people'
@@ -355,63 +355,23 @@ const PHARMACY = [
     name: 'Account'
   },
   {
-    state: '',
+    state: 'profile',
     name: 'Profile',
     type: 'link',
     icon: 'ion-ios-contact'
   },
   {
-    state: 'change-password',
+    state: 'account/change-password',
     name: 'Change Password',
-    type: 'link',
+    type: 'extLink',
     icon: 'ion-ios-shuffle'
   },
   {
-    state: 'lockscreen',
+    state: 'account/lockscreen',
     name: 'Lockscreen',
-    type: 'link',
+    type: 'extLink',
     icon: 'ion-ios-locked'
-  },
-  // {
-  //   state: 'pharmacy',
-  //   name: 'Pharmacy',
-  //   type: 'sub',
-  //   icon: 'ion-ios-box',
-  //   children: [
-  //     {
-  //       state: '',
-  //       name: 'Patients',
-  //       type: 'link',
-  //       icon: 'ion-ios-people'
-  //     },
-  //     {
-  //       state: 'see-patient',
-  //       name: 'Pharmacy\'s form',
-  //       type: 'link',
-  //       icon: 'ion-ios-people'
-  //     }
-  //   ]
-  // },
-  // {
-  //   state: 'account',
-  //   name: 'Account',
-  //   type: 'sub',
-  //   icon: 'ion-ios-person',
-  //   children: [
-  //     {
-  //       state: 'profile',
-  //       name: 'Profile'
-  //     },
-  //     {
-  //       state: 'change-password',
-  //       name: 'Change Password'
-  //     },
-  //     {
-  //       state: 'lockscreen',
-  //       name: 'Lockscreen'
-  //     }
-  //   ]
-  // }
+  }
 ];
 
 @Injectable()
