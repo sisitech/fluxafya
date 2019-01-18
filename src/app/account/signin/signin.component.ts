@@ -29,6 +29,54 @@ export class SigninComponent implements OnInit {
       role: 'R',
       username: 'normanmunge@gmail.com',
       password: '#munge'
+    },
+    {
+      name: 'FluxAfya Administrator',
+      role: 'SA',
+      username: 'admin',
+      password: 'admin123'
+    },
+    {
+      name: 'Hospital Administrator',
+      role: 'A',
+      username: 'hospital',
+      password: 'admin123'
+    },
+    {
+      name: 'Jane Doe',
+      role: 'P',
+      username: 'patient',
+      password: 'admin123'
+    },
+    {
+      name: 'Finance Administrator',
+      role: 'F',
+      username: 'finance',
+      password: 'admin123'
+    },
+    {
+      name: 'Triage Administrator',
+      role: 'T',
+      username: 'triage',
+      password: 'admin123'
+    },
+    {
+      name: 'Lab Administrator',
+      role: 'L',
+      username: 'lab',
+      password: 'admin123'
+    },
+    {
+      name: 'Reception',
+      role: 'R',
+      username: 'reception',
+      password: 'admin123'
+    },
+    {
+      name: 'Reception - Finance Administrator',
+      role: 'RF',
+      username: 'recfinance',
+      password: 'admin123'
     }
   ]
 
