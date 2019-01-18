@@ -513,6 +513,64 @@ const TRIAGE = [
   }
 ];
 
+const PERSONAL = [
+  {
+    type: 'title',
+    name: 'MAIN'
+  },
+  {
+    state: '/',
+    name: 'HOME',
+    type: 'link',
+    icon: 'ion-ios-speedometer'
+  },
+  {
+    state: 'docs',
+    name: 'DOCS',
+    type: 'link',
+    icon: 'ion-ios-help'
+  },
+  {
+    type: 'divider'
+  },
+  {
+    type: 'title',
+    name: 'Medical'
+  },
+  {
+    state: 'ext-patient/histories',
+    name: 'Histories',
+    type: 'extLink',
+    icon: 'ion-ios-people'
+  },
+  {
+    type: 'divider'
+  },
+  {
+    type: 'title',
+    name: 'Account'
+  },
+  {
+    state: 'profile',
+    name: 'Profile',
+    type: 'link',
+    icon: 'ion-ios-contact'
+  },
+  {
+    state: 'account/change-password',
+    name: 'Change Password',
+    type: 'extLink',
+    icon: 'ion-ios-shuffle'
+  },
+  {
+    state: 'account/lockscreen',
+    name: 'Lockscreen',
+    type: 'extLink',
+    icon: 'ion-ios-locked'
+  }
+];
+
+
 @Injectable()
 export class MenuService {
 
@@ -520,27 +578,19 @@ export class MenuService {
     let profile = JSON.parse(localStorage.getItem('userProfile'));
 
     if(profile.role == 'SA'){
-
       return MENUITEMS;
-
     } else if(profile.role == 'R'){
-      
       return RECEPTION;
-
     } else if (profile.role == 'PH') {
-      
       return PHARMACY;
-
     } else if (profile.role == 'F') {
-      
       return FINANCE;
-
     } else if (profile.role == 'RF') {
-      
       return RECFINANCE;
-      
     } else if (profile.role == 'T'){
       return TRIAGE;
+    } else if (profile.role == 'P'){
+      return PERSONAL;
     }
   }
 }
