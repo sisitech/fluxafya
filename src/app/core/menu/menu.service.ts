@@ -310,7 +310,7 @@ const RECEPTIONISTMENUITEMS = [
     icon: 'ion-ios-person',
     children: [
       {
-        state: 'history',
+        state: 'histories',
         name: 'Medical History'
       }
     ]

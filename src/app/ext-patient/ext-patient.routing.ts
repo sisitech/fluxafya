@@ -7,7 +7,7 @@ export const ExtPatientRoutes: Routes = [
     path: '',
     children: [
       {
-        path: 'history',
+        path: 'histories',
         component: ExtPatientComponent,
         data: {
           heading: 'Medical Prescription'
