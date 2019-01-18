@@ -228,9 +228,15 @@ const RECEPTION = [
     name: 'Reception'
   },
   {
-    state: 'reception',
+    state: 'patients/register',
+    name: 'Register',
+    type: 'extLink',
+    icon: 'ion-document'
+  },
+  {
+    state: 'patients',
     name: 'Patients',
-    type: 'link',
+    type: 'extLink',
     icon: 'ion-ios-people'
   },
   {
