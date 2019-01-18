@@ -317,6 +317,103 @@ const RECEPTIONISTMENUITEMS = [
   }
 ];
 
+const PHARMACY = [
+  {
+    type: 'title',
+    name: 'MAIN'
+  },
+  {
+    state: '/',
+    name: 'HOME',
+    type: 'link',
+    icon: 'ion-ios-speedometer'
+  },
+  {
+    state: 'docs',
+    name: 'DOCS',
+    type: 'link',
+    icon: 'ion-ios-help'
+  },
+  {
+    type: 'divider'
+  },
+  {
+    type: 'title',
+    name: 'Patients'
+  },
+  {
+    state: '',
+    name: 'Patients',
+    type: 'link',
+    icon: 'ion-ios-people'
+  },
+  {
+    type: 'divider'
+  },
+  {
+    type: 'title',
+    name: 'Account'
+  },
+  {
+    state: '',
+    name: 'Profile',
+    type: 'link',
+    icon: 'ion-ios-contact'
+  },
+  {
+    state: 'change-password',
+    name: 'Change Password',
+    type: 'link',
+    icon: 'ion-ios-shuffle'
+  },
+  {
+    state: 'lockscreen',
+    name: 'Lockscreen',
+    type: 'link',
+    icon: 'ion-ios-locked'
+  },
+  // {
+  //   state: 'pharmacy',
+  //   name: 'Pharmacy',
+  //   type: 'sub',
+  //   icon: 'ion-ios-box',
+  //   children: [
+  //     {
+  //       state: '',
+  //       name: 'Patients',
+  //       type: 'link',
+  //       icon: 'ion-ios-people'
+  //     },
+  //     {
+  //       state: 'see-patient',
+  //       name: 'Pharmacy\'s form',
+  //       type: 'link',
+  //       icon: 'ion-ios-people'
+  //     }
+  //   ]
+  // },
+  // {
+  //   state: 'account',
+  //   name: 'Account',
+  //   type: 'sub',
+  //   icon: 'ion-ios-person',
+  //   children: [
+  //     {
+  //       state: 'profile',
+  //       name: 'Profile'
+  //     },
+  //     {
+  //       state: 'change-password',
+  //       name: 'Change Password'
+  //     },
+  //     {
+  //       state: 'lockscreen',
+  //       name: 'Lockscreen'
+  //     }
+  //   ]
+  // }
+];
+
 @Injectable()
 export class MenuService {
 
@@ -327,9 +424,11 @@ export class MenuService {
 
       return MENUITEMS;
 
-    }else if(profile.role == 'R'){
-
+    } else if(profile.role == 'R'){
       return RECEPTIONISTMENUITEMS;
+
+    } else if (profile.role == 'PH') {
+      return PHARMACY;
     }
   }
 }
