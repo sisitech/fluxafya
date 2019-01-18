@@ -203,7 +203,7 @@ const MENUITEMS = [
   }
 ];
 
-const RECEPTIONISTMENUITEMS = [
+const RECEPTION = [
   {
     type: 'title',
     name: 'MAIN'
@@ -225,124 +225,10 @@ const RECEPTIONISTMENUITEMS = [
   },
   {
     type: 'title',
-    name: 'Customer Registration'
+    name: 'Reception'
   },
   {
-    state: 'patients',
-    name: 'Reception',
-    type: 'sub',
-    icon: 'ion-ios-person',
-    children: [
-      {
-        state: 'register',
-        name: 'Patient Registration',
-        type:'link',
-      },
-      {
-        state: '',
-        name: 'Registered Patients',
-        type:'link',
-      }
-    ]
-  },
-  {
-    type: 'divider',
-  },
-  {
-    type: 'title',
-    name: 'Finance Module'
-  },
-  {
-    state: 'finance',
-    name: 'Finance',
-    type: 'sub',
-    icon: 'ion-ios-list',
-    children: [
-      {
-        state: '',
-        name: 'Patients',
-        type: 'link',
-        icon: 'ion-ios-people'
-      },
-      {
-        state: 'see-patient',
-        name: 'Finance form',
-        type: 'link',
-        icon: 'ion-ios-people'
-      }
-    ]
-  },
-  {
-    type: 'divider'
-  },
-  {
-    type: 'title',
-    name: 'Account Modules'
-  },
-  {
-    state: 'account',
-    name: 'ACCOUNT',
-    type: 'sub',
-    icon: 'ion-ios-person',
-    children: [
-      {
-        state: 'signin',
-        name: 'SIGNIN'
-      },
-      {
-        state: 'signup',
-        name: 'SIGNUP'
-      },
-      {
-        state: 'forgot',
-        name: 'FORGOT'
-      },
-      {
-        state: 'lockscreen',
-        name: 'LOCKSCREEN'
-      }
-    ]
-  },
-  {
-    state: 'ext-patient',
-    name: 'Ext Patient',
-    type: 'sub',
-    icon: 'ion-ios-person',
-    children: [
-      {
-        state: 'histories',
-        name: 'Medical History'
-      }
-    ]
-  }
-];
-
-const PHARMACY = [
-  {
-    type: 'title',
-    name: 'MAIN'
-  },
-  {
-    state: '/',
-    name: 'HOME',
-    type: 'link',
-    icon: 'ion-ios-speedometer'
-  },
-  {
-    state: 'docs',
-    name: 'DOCS',
-    type: 'link',
-    icon: 'ion-ios-help'
-  },
-  {
-    type: 'divider'
-  },
-  {
-    type: 'title',
-    name: 'Patients'
-  },
-  {
-    state: 'pharmacy',
+    state: 'reception',
     name: 'Patients',
     type: 'link',
     icon: 'ion-ios-people'
@@ -374,7 +260,7 @@ const PHARMACY = [
   }
 ];
 
-const FINANCE = [
+const PHARMACY = [
   {
     type: 'title',
     name: 'MAIN'
@@ -399,7 +285,7 @@ const FINANCE = [
     name: 'Patients'
   },
   {
-    state: 'finance',
+    state: 'pharmacy',
     name: 'Patients',
     type: 'link',
     icon: 'ion-ios-people'
@@ -507,6 +393,63 @@ const RECFINANCE = [
   }
 ];
 
+const FINANCE = [
+  {
+    type: 'title',
+    name: 'MAIN'
+  },
+  {
+    state: '/',
+    name: 'HOME',
+    type: 'link',
+    icon: 'ion-ios-speedometer'
+  },
+  {
+    state: 'docs',
+    name: 'DOCS',
+    type: 'link',
+    icon: 'ion-ios-help'
+  },
+  {
+    type: 'divider'
+  },
+  {
+    type: 'title',
+    name: 'Finance'
+  },
+  {
+    state: 'finance',
+    name: 'Patients',
+    type: 'link',
+    icon: 'ion-ios-people'
+  },
+  {
+    type: 'divider'
+  },
+  {
+    type: 'title',
+    name: 'Account'
+  },
+  {
+    state: 'profile',
+    name: 'Profile',
+    type: 'link',
+    icon: 'ion-ios-contact'
+  },
+  {
+    state: 'account/change-password',
+    name: 'Change Password',
+    type: 'extLink',
+    icon: 'ion-ios-shuffle'
+  },
+  {
+    state: 'account/lockscreen',
+    name: 'Lockscreen',
+    type: 'extLink',
+    icon: 'ion-ios-locked'
+  }
+];
+
 
 @Injectable()
 export class MenuService {
@@ -520,7 +463,7 @@ export class MenuService {
 
     } else if(profile.role == 'R'){
       
-      return RECEPTIONISTMENUITEMS;
+      return RECEPTION;
 
     } else if (profile.role == 'PH') {
       
@@ -531,7 +474,9 @@ export class MenuService {
       return FINANCE;
 
     } else if (profile.role == 'RF') {
+      
       return RECFINANCE;
+      
     }
   }
 }

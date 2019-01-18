@@ -67,7 +67,7 @@ export class SigninComponent implements OnInit {
       password: 'admin123'
     },
     {
-      name: 'Reception',
+      name: 'Reception Administrator',
       role: 'R',
       username: 'reception',
       password: 'admin123'
