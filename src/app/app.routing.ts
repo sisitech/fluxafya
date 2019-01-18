@@ -92,6 +92,11 @@ export const AppRoutes: Routes = [
       {
         path: 'pharmacy',
         loadChildren: './pharmacy/pharmacy.module#PharmacyModule'
+      },
+      {
+        path: 'ext-patient',
+        // loadChildren: './pharmacy/pharmacy.module#PharmacyModule'
+        loadChildren: './ext-patient/ext-patient.module#ExtPatientModule'
       }
     ]
   },

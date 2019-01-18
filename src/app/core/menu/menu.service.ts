@@ -302,6 +302,18 @@ const RECEPTIONISTMENUITEMS = [
         name: 'LOCKSCREEN'
       }
     ]
+  },
+  {
+    state: 'ext-patient',
+    name: 'Ext Patient',
+    type: 'sub',
+    icon: 'ion-ios-person',
+    children: [
+      {
+        state: 'history',
+        name: 'Medical History'
+      }
+    ]
   }
 ];
 
