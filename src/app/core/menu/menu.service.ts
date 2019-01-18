@@ -456,6 +456,62 @@ const FINANCE = [
   }
 ];
 
+const TRIAGE = [
+  {
+    type: 'title',
+    name: 'MAIN'
+  },
+  {
+    state: '/',
+    name: 'HOME',
+    type: 'link',
+    icon: 'ion-ios-speedometer'
+  },
+  {
+    state: 'docs',
+    name: 'DOCS',
+    type: 'link',
+    icon: 'ion-ios-help'
+  },
+  {
+    type: 'divider'
+  },
+  {
+    type: 'title',
+    name: 'Triage'
+  },
+  {
+    state: 'triage',
+    name: 'Patients',
+    type: 'link',
+    icon: 'ion-ios-people'
+  },
+  {
+    type: 'divider'
+  },
+  {
+    type: 'title',
+    name: 'Account'
+  },
+  {
+    state: 'profile',
+    name: 'Profile',
+    type: 'link',
+    icon: 'ion-ios-contact'
+  },
+  {
+    state: 'account/change-password',
+    name: 'Change Password',
+    type: 'extLink',
+    icon: 'ion-ios-shuffle'
+  },
+  {
+    state: 'account/lockscreen',
+    name: 'Lockscreen',
+    type: 'extLink',
+    icon: 'ion-ios-locked'
+  }
+];
 
 @Injectable()
 export class MenuService {
@@ -483,6 +539,8 @@ export class MenuService {
       
       return RECFINANCE;
       
+    } else if (profile.role == 'T'){
+      return TRIAGE;
     }
   }
 }
