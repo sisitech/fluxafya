@@ -92,6 +92,10 @@ export const AppRoutes: Routes = [
       {
         path: 'pharmacy',
         loadChildren: './pharmacy/pharmacy.module#PharmacyModule'
+      },
+      {
+        path: 'labs',
+        loadChildren: './labs/labs.module#LabsModule'
       }
     ]
   },

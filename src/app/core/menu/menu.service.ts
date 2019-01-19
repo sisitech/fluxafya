@@ -148,6 +148,33 @@ const MENUITEMS = [
   },
   {
     type: 'title',
+    name: 'Labs Module'
+  },
+  {
+    state: 'labs',
+    name: 'Labs',
+    type: 'sub',
+    icon: 'ion-ios-people',
+    children: [
+      {
+        state: '',
+        name: 'Patients',
+        type: 'link',
+        icon: 'ion-ios-people'
+      },
+      {
+        state: 'see-patient',
+        name: 'Lab\'s form',
+        type: 'link',
+        icon: 'ion-ios-people'
+      }
+    ]
+  },
+  {
+    type: 'divider',
+  },
+  {
+    type: 'title',
     name: 'Pharmacy Module'
   },
   {
