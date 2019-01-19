@@ -29,6 +29,66 @@ export class SigninComponent implements OnInit {
       role: 'R',
       username: 'normanmunge@gmail.com',
       password: '#munge'
+    },
+    {
+      name: 'FluxAfya Administrator',
+      role: 'SA',
+      username: 'admin',
+      password: 'admin123'
+    },
+    {
+      name: 'Hospital Administrator',
+      role: 'A',
+      username: 'hospital',
+      password: 'admin123'
+    },
+    {
+      name: 'Jane Doe',
+      role: 'P',
+      username: 'patient',
+      password: 'admin123'
+    },
+    {
+      name: 'Finance Administrator',
+      role: 'F',
+      username: 'finance',
+      password: 'admin123'
+    },
+    {
+      name: 'Triage Administrator',
+      role: 'T',
+      username: 'triage',
+      password: 'admin123'
+    },
+    {
+      name: 'Lab Administrator',
+      role: 'L',
+      username: 'lab',
+      password: 'admin123'
+    },
+    {
+      name: 'Reception Administrator',
+      role: 'R',
+      username: 'reception',
+      password: 'admin123'
+    },
+    {
+      name: 'Reception - Finance Administrator',
+      role: 'RF',
+      username: 'recfinance',
+      password: 'admin123'
+    },
+    {
+      name: 'Pharmacy Administrator',
+      role: 'PH',
+      username: 'pharmacy',
+      password: 'admin123'
+    },
+    {
+      name: 'Doctor Account',
+      role: 'D',
+      username: 'doctor',
+      password: 'admin123'
     }
   ]
 
@@ -54,13 +114,13 @@ export class SigninComponent implements OnInit {
     for(let a=0; a < this.USERS.length; a++){
       if(email == this.USERS[a].username && password == this.USERS[a].password){
         console.log('great')
-        this.success = 'Successfully Logged In';
+        this.success = 'Successfully logged in ... ';
         localStorage.setItem('userProfile', JSON.stringify(this.USERS[a]));
         this.router.navigate(['/dashboard'])
         return;
       }else{
         console.log('wrong')
-        this.error = 'Wrong Email/Password Combination',
+        this.error = 'Wrong email-password combination',
         this.router.navigate(['/account/signin'])
       }
     }

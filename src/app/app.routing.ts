@@ -94,8 +94,16 @@ export const AppRoutes: Routes = [
         loadChildren: './pharmacy/pharmacy.module#PharmacyModule'
       },
       {
-        path: 'labs',
-        loadChildren: './labs/labs.module#LabsModule'
+        path: 'ext-patient',
+        loadChildren: './ext-patient/ext-patient.module#ExtPatientModule'
+      }, 
+      {
+      path: 'labs',
+      loadChildren: './labs/labs.module#LabsModule'
+    },
+      {
+        path: 'profile',
+        loadChildren: './social/social.module#SocialModule'
       }
     ]
   },
