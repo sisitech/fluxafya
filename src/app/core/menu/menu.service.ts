@@ -202,6 +202,33 @@ const MENUITEMS = [
   },
   {
     type: 'title',
+    name: 'Admin Modules'
+  },
+  {
+    state: 'admin',
+    name: 'User Admin',
+    type: 'sub',
+    icon: 'ion-ios-person',
+    children: [
+      {
+        state: '',
+        name: 'View Users',
+        type: 'link',
+        icon: 'ion-ios-people'
+      },
+      {
+        state: 'manage-users',
+        name: 'Manage Users',
+        type: 'link',
+        icon: 'ion-ios-people'
+      }
+    ]
+  },
+  {
+    type: 'divider',
+  },
+  {
+    type: 'title',
     name: 'Account Modules'
   },
   {

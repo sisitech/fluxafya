@@ -101,6 +101,10 @@ export const AppRoutes: Routes = [
       path: 'labs',
       loadChildren: './labs/labs.module#LabsModule'
     },
+    {
+      path: 'admin',
+      loadChildren: './admin/admin.module#AdminModule'
+    },
       {
         path: 'profile',
         loadChildren: './social/social.module#SocialModule'
