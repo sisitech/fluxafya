@@ -83,6 +83,12 @@ export class SigninComponent implements OnInit {
       role: 'PH',
       username: 'pharmacy',
       password: 'admin123'
+    },
+    {
+      name: 'Doctor Account',
+      role: 'D',
+      username: 'doctor',
+      password: 'admin123'
     }
   ]
 
