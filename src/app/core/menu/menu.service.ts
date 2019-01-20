@@ -694,7 +694,6 @@ const DOCTOR = [
   }
 ];
 
-
 const LAB = [
   {
     type: 'title',
