@@ -695,6 +695,64 @@ const DOCTOR = [
 ];
 
 
+const LAB = [
+  {
+    type: 'title',
+    name: 'MAIN'
+  },
+  {
+    state: '/',
+    name: 'HOME',
+    type: 'link',
+    icon: 'ion-ios-speedometer'
+  },
+  {
+    state: 'docs',
+    name: 'DOCS',
+    type: 'link',
+    icon: 'ion-ios-help'
+  },
+  {
+    type: 'divider'
+  },
+  {
+    type: 'title',
+    name: 'Laboratory'
+  },
+  {
+    state: 'labs/patients',
+    name: 'Patients',
+    type: 'extLink',
+    icon: 'ion-ios-people'
+  },
+  {
+    type: 'divider'
+  },
+  {
+    type: 'title',
+    name: 'Account'
+  },
+  {
+    state: 'profile',
+    name: 'Profile',
+    type: 'link',
+    icon: 'ion-ios-contact'
+  },
+  {
+    state: 'account/change-password',
+    name: 'Change Password',
+    type: 'extLink',
+    icon: 'ion-ios-shuffle'
+  },
+  {
+    state: 'account/lockscreen',
+    name: 'Lockscreen',
+    type: 'extLink',
+    icon: 'ion-ios-locked'
+  }
+];
+
+
 @Injectable()
 export class MenuService {
 
@@ -717,6 +775,8 @@ export class MenuService {
       return PERSONAL;
     } else if (profile.role == 'D'){
       return DOCTOR;
+    } else if (profile.role == 'L'){
+      return LAB;
     }
   }
 }
