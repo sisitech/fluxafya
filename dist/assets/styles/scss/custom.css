@@ -1,0 +1,13 @@
+.shorten-cards {
+    width: 70% !important;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.rounded-alerts {
+    border-radius: 90px;
+}
