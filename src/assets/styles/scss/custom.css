@@ -11,3 +11,9 @@
 .rounded-alerts {
     border-radius: 90px;
 }
+
+.logo {
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+}
