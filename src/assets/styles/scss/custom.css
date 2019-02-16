@@ -22,12 +22,12 @@
 /* Added from sample design */
 
 .logo {
-    width: 100%;
+    width: 80%;
     padding-top: 50px;
 }
 
 .img-links {
-    width: 80%;
+    width: 50%;
 }
 
 .nav-links li {
@@ -98,7 +98,7 @@ li {
 }
 
 .img-landing {
-    width: 40%;
+    width: 20%;
 }
 
 .card-body {
