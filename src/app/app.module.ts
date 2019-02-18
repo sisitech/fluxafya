@@ -26,6 +26,7 @@ import {
   AccordionLinkDirective,
   AccordionDirective
 } from './core';
+import { AdminComponent } from './admin/admin.component';
 
 
 export function createTranslateLoader(http: HttpClient) {

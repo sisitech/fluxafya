@@ -14,6 +14,7 @@
                 <i class="icon ion-ios-bell"></i>
                 <span class="badge badge-danger" style="background-color: #cf005d">4</span>
             </a>
+
             <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right notifications">
                 <div class="notifications-wrapper">
                     <a href="javascript:;" class="dropdown-item">
@@ -41,6 +42,7 @@
         <li class="nav-item" ngbDropdown placement="bottom-left">
             <a href="javascript:;" class="nav-link" ngbDropdownToggle container="body" placement="bottom" ngbTooltip="Finance">
                 <i class="icon ion-card"></i>
+                <!-- <i><img src="assets/images/landing/switch.png" class="icon icons" alt=""> -->
                 <span class="badge badge-danger" style="background-color: #cf005d">2</span>
             </a>
             <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right notifications">
@@ -66,70 +68,6 @@
                     <a href="javascript:;" class="dropdown-item">See all notifications</a>
                 </div>
             </div>
-        </li>
-        <li class="nav-item" ngbDropdown placement="bottom-left">
-            <a href="javascript:;" class="nav-link" ngbDropdownToggle container="body" placement="bottom" ngbTooltip="Quick launch">
-                <i class="icon ion-ios-keypad"></i>
-            </a>
-            <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right quick-launch">
-                <div class="row">
-                    <div class="col-4 text-center py-3">
-                        <a href="javascript:;">
-                            <span class="d-block">
-                      <i class="h1 text-primary icon ion-ios-email"></i>
-                    </span>
-                            <small class="text-muted">Emails</small>
-                        </a>
-                    </div>
-                    <div class="col-4 text-center py-3">
-                        <a href="javascript:;">
-                            <span class="d-block">
-                      <i class="h1 text-success icon ion-ios-person"></i>
-                    </span>
-                            <small class="text-muted">Social</small>
-                        </a>
-                    </div>
-                    <div class="col-4 text-center py-3">
-                        <a href="javascript:;">
-                            <span class="d-block">
-                      <i class="h1 text-info icon ion-ios-film"></i>
-                    </span>
-                            <small class="text-muted">Multimedia</small>
-                        </a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-4 text-center py-3">
-                        <a href="javascript:;">
-                            <span class="d-block">
-                      <i class="h1 text-danger icon ion-ios-calendar"></i>
-                    </span>
-                            <small class="text-muted">Calendar</small>
-                        </a>
-                    </div>
-                    <div class="col-4 text-center py-3">
-                        <a href="javascript:;">
-                            <span class="d-block">
-                      <i class="h1 text-warning icon ion-ios-navigate"></i>
-                    </span>
-                            <small class="text-muted">Map</small>
-                        </a>
-                    </div>
-                    <div class="col-4 text-center py-3">
-                        <a href="javascript:;">
-                            <span class="d-block">
-                      <i class="h1 text-muted icon ion-ios-paper"></i>
-                    </span>
-                            <small class="text-muted">Taskboard</small>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li class="nav-item">
-            <a href="javascript:;" [routerLink]="['/docs']" class="nav-link" container="body" placement="bottom" ngbTooltip="Help">
-                <i class="icon ion-ios-help"></i>
-            </a>
         </li>
     </ul>
 
