@@ -1,156 +1,254 @@
-<div class="card">
-  <div class="card-header">
-      Patients in Queue
-  </div>
-  <div class="card-body">
-      <div class="table-responsive">
-          <table class="table table-striped">
-              <thead>
-                  <tr>
-                      <th>
-                          #
-                      </th>
-                      <th>
-                          Full name
-                      </th>
-                      <th>
-                          Gender
-                      </th>
-                      <th>
-                          Phone number
-                      </th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr [routerLink]="['/labs/see-patient']">
-                      <th scope="row">
-                          1
-                      </th>
-                      <td>
-                          Mark Otto
-                      </td>
-                      <td>
-                          Male
-                      </td>
-                      <td>
-                          (254) 720
-                      </td>
-                  </tr>
-                  <tr>
-                      <th scope="row">
-                          2
-                      </th>
-                      <td>
-                          Jane Thornton
-                      </td>
-                      <td>
-                          Female
-                      </td>
-                      <td>
-                          (254) 720
-                      </td>
-                  </tr>
-                  <tr>
-                      <th scope="row">
-                          3
-                      </th>
-                      <td>
-                          Larry the Bird
-                      </td>
-                      <td>
-                          Male
-                      </td>
-                      <td>
-                          (254) 720
-                      </td>
-                  </tr>
-                  <tr>
-                      <th scope="row">
-                          4
-                      </th>
-                      <td>
-                          Mark Otto
-                      </td>
-                      <td>
-                          Male
-                      </td>
-                      <td>
-                          (254) 720
-                      </td>
-                  </tr>
-                  <tr>
-                      <th scope="row">
-                          5
-                      </th>
-                      <td>
-                          Jane Thornton
-                      </td>
-                      <td>
-                          Female
-                      </td>
-                      <td>
-                          (254) 720
-                      </td>
-                  </tr>
-                  <tr>
-                      <th scope="row">
-                          6
-                      </th>
-                      <td>
-                          Larry the Bird
-                      </td>
-                      <td>
-                          Male
-                      </td>
-                      <td>
-                          (254) 720
-                      </td>
-                  </tr>
-                  <tr>
-                      <th scope="row">
-                          7
-                      </th>
-                      <td>
-                          Mark Otto
-                      </td>
-                      <td>
-                          Male
-                      </td>
-                      <td>
-                          (254) 720
-                      </td>
-                  </tr>
-                  <tr>
-                      <th scope="row">
-                          8
-                      </th>
-                      <td>
-                          Jane Thornton
-                      </td>
-                      <td>
-                          Female
-                      </td>
-                      <td>
-                          (254) 720
-                      </td>
-                  </tr>
-                  <tr>
-                      <th scope="row">
-                          9
-                      </th>
-                      <td>
-                          Larry the Bird
-                      </td>
-                      <td>
-                          Male
-                      </td>
-                      <td>
-                          (254) 720
-                      </td>
-                  </tr>
+<div class="contain">
+    <div class="card">
+        <div class="card-header">
+            <p>Welcome !</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="row top-padding-80">
+                <div class="col-md-6">
+                    <!-- <div class="card"> -->
+                            <!-- <div class="card-header">
+                                Patients in Queue
+                            </div> -->
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    #
+                                                </th>
+                                                <th>
+                                                    Full name
+                                                </th>
+                                                <th>
+                                                    Gender
+                                                </th>
+                                                <th>
+                                                    Phone number
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr [routerLink]="['/labs/see-patient']">
+                                                <th scope="row">
+                                                    1
+                                                </th>
+                                                <td>
+                                                    Mark Otto
+                                                </td>
+                                                <td>
+                                                    Male
+                                                </td>
+                                                <td>
+                                                    (254) 720
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">
+                                                    2
+                                                </th>
+                                                <td>
+                                                    Jane Thornton
+                                                </td>
+                                                <td>
+                                                    Female
+                                                </td>
+                                                <td>
+                                                    (254) 720
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">
+                                                    3
+                                                </th>
+                                                <td>
+                                                    Larry the Bird
+                                                </td>
+                                                <td>
+                                                    Male
+                                                </td>
+                                                <td>
+                                                    (254) 720
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">
+                                                    4
+                                                </th>
+                                                <td>
+                                                    Mark Otto
+                                                </td>
+                                                <td>
+                                                    Male
+                                                </td>
+                                                <td>
+                                                    (254) 720
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">
+                                                    5
+                                                </th>
+                                                <td>
+                                                    Jane Thornton
+                                                </td>
+                                                <td>
+                                                    Female
+                                                </td>
+                                                <td>
+                                                    (254) 720
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">
+                                                    6
+                                                </th>
+                                                <td>
+                                                    Larry the Bird
+                                                </td>
+                                                <td>
+                                                    Male
+                                                </td>
+                                                <td>
+                                                    (254) 720
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">
+                                                    7
+                                                </th>
+                                                <td>
+                                                    Mark Otto
+                                                </td>
+                                                <td>
+                                                    Male
+                                                </td>
+                                                <td>
+                                                    (254) 720
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">
+                                                    8
+                                                </th>
+                                                <td>
+                                                    Jane Thornton
+                                                </td>
+                                                <td>
+                                                    Female
+                                                </td>
+                                                <td>
+                                                    (254) 720
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">
+                                                    9
+                                                </th>
+                                                <td>
+                                                    Larry the Bird
+                                                </td>
+                                                <td>
+                                                    Male
+                                                </td>
+                                                <td>
+                                                    (254) 720
+                                                </td>
+                                            </tr>
+                          
+                                        </tbody>
+                                    </table>
+                                <!-- </div> -->
+                          </div>
+                <!-- <div class="col">
+                    <div class="text-center">
+                        <img src="assets/images/landing/dashboard.png" alt="" class="img-links">
+                    </div>
+                    <div class="center-text">
+                        <p>Dashboard</p>
+                    </div>
+                </div>
+                <div class="col"></div>
+                <div class="col">
+                    <div class="text-center">
+                        <img src="assets/images/landing/settings.png" alt="" class="img-links">
+                    </div>
+                    <div class="center-text">
+                        <p>Settings</p>
+                    </div>
+                </div> -->
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="text-center">
+                                <img src="assets/images/labs/Patients in Waiting.png" alt="" class="img-links">
+                            </div>
+                            <div class="center-text">
+                                <p>15 PATIENTS IN WAITING</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-center">
+                                <img class="top-padding-20" src="assets/images/labs/Patients seen.png" alt="" class="img-links">
+                            </div>
+                            <div class="center-text">
+                                <p>20 PATIENTS SEEN</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="text-center top-padding-80">
+                                <img  src="assets/images/labs/Waiting.png" alt="" class="img-links">
+                            </div>
+                            <!-- <div class="col-md-6"> -->
+                                
+                            <!-- </div> -->
+                            <div class="text-center top-padding-80">
+                                <div><p>LOGGED IN FOR:</p></div>
+                                <img src="assets/images/labs/Logged in for 1 hr.png" alt="" class="img-links">
+                            </div>
 
-              </tbody>
-          </table>
-      </div>
-  </div>
+                            <div class="text-center top-padding-80" style="margin-left:70%">
+                                <img height="80" src="assets/images/labs/Average Time per Patient.png" alt="" class="img-links">
+                                <p>5 MINS</p>
+                                <p>AVERAGE TIME PER PATIENT</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="row ">
+                <div class="col-sm-12 mx-auto">
+                    <div class="text-center">
+                        <img src="assets/images/landing/landing.png" class="img-landing" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="text-center">
+                        <img src="assets/images/landing/reports.png" alt="" class="img-links">
+                    </div>
+                    <div class="center-text">
+                        <p>Reports</p>
+                    </div>
+                </div>
+                <div class="col"></div>
+                <div class="col">
+                    <div class="text-center">
+                        <img src="assets/images/landing/stations.png" alt="" class="img-links">
+                    </div>
+                    <div class="center-text">
+                        <p>Stations</p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
 </div>
