@@ -112,3 +112,7 @@ li {
 .main-content {
     background-color: white;
 }
+
+mat-sidenav.sidebar-panel .menu .navigation-link{
+    color:white !important;
+}

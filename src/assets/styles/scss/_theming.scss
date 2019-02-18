@@ -29,9 +29,9 @@ chart-grid: rgba(black, 0.05),
 .theme-winter {
   @include theme($winter-theme-background, $winter-theme-foreground);
 
-  // .bg-cover {
-  //   background-image: url(../../assets/images/fluxbg.png)
-  // }
+  .bg-cover {
+    background-image: url(../../assets/images/fluxbg.png)
+  }
 }
 
 // ******
