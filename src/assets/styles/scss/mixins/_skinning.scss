@@ -209,7 +209,8 @@
   }
 
   .bg-cover::before {
-    background-color: map-get($background, sidebar);
+    background-color: #cf005d;
+    opacity:0.4 !important;
   }
 
   //Accordion
