@@ -1,0 +1,77 @@
+    .logo {
+        width: 80%;
+        padding-top: 50px;
+    }
+    
+    .img-links {
+        width: 45%;
+    }
+    
+    .nav-links li {
+        display: inline-block;
+        list-style: none;
+        padding-right: 20px;
+    }
+    
+    .center-text {
+        text-align: center;
+    }
+    
+    .top-pad-sm {
+        padding-top: 20px;
+    }
+    
+    .flag {
+        width: 10%;
+        /* display: inline; */
+    }
+    
+    .float-right {
+        text-align: right;
+    }
+    
+    .float-left {
+        text-align: left;
+    }
+    
+    .top-pad-m {
+        padding-top: 50px;
+    }
+    
+    p,
+    a,
+    li {
+        color: #cf005d;
+    }
+    
+    a {
+        text-decoration: underline;
+    }
+    
+    .healthcare-tag {
+        letter-spacing: 2.5px
+    }
+    
+    .sub-title {
+        font-size: 14px;
+    }
+    
+    .col-sm-12 {
+        padding-top: 25px;
+    }
+    
+    @media (max-width: 779px) {
+        .copyright,
+        .nav-links {
+            text-align: center;
+        }
+        .nav-lg {
+            display: none;
+        }
+    }
+    
+    @media (min-width: 780px) {
+        .nav-mobile {
+            display: none;
+        }
+    }

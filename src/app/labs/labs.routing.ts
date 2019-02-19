@@ -16,7 +16,7 @@ export const LabRoutes: Routes = [
         path: '**',
         component: PatientsComponent,
         data: {
-          heading: 'Patients'
+          heading: 'LAB'
         }
       }
     ]

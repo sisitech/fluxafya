@@ -6,9 +6,9 @@ import { AuthLayoutComponent } from './core';
 export const AppRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'account',
+    redirectTo: 'landing',
     pathMatch: 'full',
-  }, 
+  },
   {
     path: '',
     component: AdminLayoutComponent,
@@ -72,7 +72,7 @@ export const AppRoutes: Routes = [
       {
         path: 'docs',
         loadChildren: './docs/docs.module#DocsModule'
-      }, 
+      },
       {
         path: 'patients',
         loadChildren: './patients/patients.module#PatientsModule'
@@ -96,7 +96,7 @@ export const AppRoutes: Routes = [
       {
         path: 'ext-patient',
         loadChildren: './ext-patient/ext-patient.module#ExtPatientModule'
-      }, 
+      },
       {
       path: 'labs',
       loadChildren: './labs/labs.module#LabsModule'
@@ -115,6 +115,10 @@ export const AppRoutes: Routes = [
     path: '',
     component: AuthLayoutComponent,
     children: [
+      {
+        path: 'landing',
+        loadChildren: './landingpage/landingpage.module#LandingpageModule'
+      },
       {
         path: 'account',
         loadChildren: './account/account.module#AccountModule'
