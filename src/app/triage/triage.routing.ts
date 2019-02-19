@@ -11,7 +11,7 @@ export const TriageRoutes: Routes = [
         path: 'see-patient',
         component: TriageComponent,
         data: {
-          heading: 'Record Patient\'s vitals'
+          heading: 'TRIAGE FORM'
         }
       },
       {
