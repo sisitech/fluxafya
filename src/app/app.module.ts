@@ -14,7 +14,7 @@ import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 
 import { AppRoutes } from './app.routing';
 import { AppComponent } from './app.component';
-
+import { LandingpageComponent } from './landingpage/landingpage.component';
 import {
   MenuComponent,
   HeaderComponent,

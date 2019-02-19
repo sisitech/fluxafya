@@ -10,7 +10,7 @@ export const AccountRoutes: Routes = [
     path: '',
     redirectTo: 'signin',
     pathMatch: 'full',
-  }, 
+  },
   {
     path: '',
     children: [
