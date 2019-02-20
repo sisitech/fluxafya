@@ -3,29 +3,37 @@
         <div class="card-body">Welcome <b>Dennis Sigei,</b></div>
     </div>
     <div class="card">
-        <div class="card-header">MEASURE OF PATIENT<b>'</b>S VITALS</div>
+        <div class="card-header">MEASURE OF PATIENT'S VITALS</div>
 
         <div class="card-body">
             <div class="form-group row">
                 <div class="col-md-6">
                     <div class="row">
-                        <label for="staticEmail" class="col-sm-3 col-form-label">Weight</label>
-                        <div class="col-sm-9">
+                        <label for="staticEmail" class="col-sm-5 symptoms-form col-form-label">Weight</label>
+                        <div class="col-sm-5">
                             <input type="text" class="form-control form-background-color" id="staticEmail" placeholder="80 Kgs">
                         </div>
                     </div>
                     <br>
                     <div class="row">
-                        <label for="staticEmail" class="col-sm-3 col-form-label">Temperature</label>
-                        <div class="col-sm-9">
+                        <label for="staticEmail" class="col-sm-5 symptoms-form col-form-label">Temperature</label>
+                        <div class="col-sm-5">
                             <input type="text" class="form-control form-background-color" id="staticEmail" placeholder="30">
                         </div>
                     </div>
                     <br>
                     <div class="row">
-                        <label for="staticEmail" class="col-sm-3 col-form-label">Blood Pressure</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control form-background-color" id="staticEmail" placeholder="120/80">
+                        <label for="staticEmail" class="col-sm-5  symptoms-form col-form-label">Blood Pressure</label>
+                        <div class="col-sm-5">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                        <input type="text" class="form-control form-background-color" id="staticEmail" placeholder="120">
+                                </div>
+                                <span class="strike-line">/</span>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control form-background-color" id="staticEmail" placeholder="80">
+                                </div>
+                            </div>
                         <!-- </div>/
                         <div class="col-sm-4">
                             <input type="text" class="form-control" id="staticEmail" placeholder="Diastolic">
@@ -33,27 +41,24 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 form-space">
                     <div class="row">
-                        <label for="staticEmail" class="col-sm-2 col-sm-offset-2 col-form-label">Allergies</label>
-                        <div class="col-sm-10">
-                            <textarea name="" class="form-control form-background-color" id="" cols="30" rows="8"></textarea>
+                        <label for="staticEmail" class="col-sm-3 col-form-label">Allergies</label>
+                        <div class="col-sm-9">
+                            <textarea name="" class="form-control form-background-color allergy-form-width" id="" cols="30" rows="8"></textarea>
                         </div>
                     </div>
                 </div>
-                
-                
             </div>
-            
         </div>
     </div>
     <div class="card">
         <div class="card-header">SYMPTOMS SUMMARY</div>
         <div class="card-body">
             <div class="form-group row">
-                <label for="staticEmail" style="margin-right:3.5%;" class="col-form-label">Symptoms <br> Summary</label>
-                <div  class="col-sm-10">
-                    <textarea style="width: 105%" name="" class="form-control form-background-color" id="" cols="30" rows="8"></textarea>
+                <label for="staticEmail" class="col-sm-2 symptoms-form col-form-label">Symptoms <br> Summary</label>
+                <div  class="col-sm-8 form-space">
+                    <textarea  name="" class="form-control form-background-color form-width" id="" cols="30" rows="8"></textarea>
                 </div>
             </div>
         </div>
@@ -62,9 +67,9 @@
         <div class="card-header">PRIORITY</div>
         <div class="card-body">
             <div class="form-group row">
-                <label for="staticEmail" style="margin-right:4.5%" class="col-form-label">Patient <br> Urgency</label>
-                <div  class="col-sm-10">
-                    <select name="" style="width: 105%" class="form-control form-background-color" id="">
+                <label for="staticEmail" class="col-sm-2 symptoms-form col-form-label">Patient <br> Urgency</label>
+                <div  class="col-sm-8 form-space">
+                    <select name="" class="form-control form-background-color form-width" id="">
                     <option>-----</option>
                     <option>Normal</option>
                     <option>High</option>

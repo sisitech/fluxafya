@@ -1,3 +1,66 @@
-.form-background-color{
-    background-color: #F9DEEB;
+.symptoms-form{
+    margin-left:2.5%;
+}
+
+.prority-form{
+    margin-right:4.5%;
+}
+
+.form-width{
+    width: 90%;
+}
+.allergy-form-width{
+    width: 103%;
+}
+
+.strike-line{
+    font-size:20px; 
+    color:#F9DEEB;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .form-width{
+        width: 100%;
+    }
+    .form-space{
+        margin-top:2px;
+    }
+    br{ 
+       display: none;
+    }
+
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .label-size {
+        width: 100%;
+    }
+    .symptoms-form{
+        margin-right:2.5%;
+    }
+    .form-width{
+        width: 120%;
+    }
+    .strike-line{
+        font-size:20px; 
+        color:#F9DEEB;
+    }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
 }
