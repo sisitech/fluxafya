@@ -1,10 +1,10 @@
     .logo {
-        width: 80%;
-        padding-top: 50px;
+        width: 60%;
+        padding-top: 20px;
     }
     
     .img-links {
-        width: 45%;
+        width: 25%;
     }
     
     .nav-links li {
@@ -60,6 +60,14 @@
         padding-top: 25px;
     }
     
+    .footer {
+        position: fixed;
+        font-size: 12px;
+        bottom: 0;
+        width: 80%;
+        left: 10%;
+    }
+    
     @media (max-width: 779px) {
         .copyright,
         .nav-links {
@@ -74,4 +82,7 @@
         .nav-mobile {
             display: none;
         }
+        /* .footer {
+            padding-top: 200px;
+        } */
     }
