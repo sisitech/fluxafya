@@ -11,14 +11,14 @@ export const FinanceRoutes: Routes = [
         path: 'see-patient',
         component: FinanceComponent,
         data: {
-          heading: 'Patients in Queue'
+          heading: 'CASHIER'
         }
       },
       {
         path: '**',
         component: PatientsComponent,
         data: {
-          heading: 'Patients'
+          heading: 'PATIENTS IN QUEUE'
         }
       }
     ]
