@@ -5,12 +5,14 @@ import { CommonModule } from '@angular/common';
 import { RolesComponent } from './roles/roles.component';
 import { RouterModule } from '@angular/router';
 import { AdminLandingComponent } from '../admin-landing/admin-landing.component';
+import { AdminSettingsComponent } from '../admin-settings/admin-settings.component';
+
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(AdminRoutes)
   ],
-  declarations: [RolesComponent, AdminComponent, AdminLandingComponent]
+  declarations: [RolesComponent, AdminComponent, AdminLandingComponent, AdminSettingsComponent]
 })
 export class AdminModule { }
