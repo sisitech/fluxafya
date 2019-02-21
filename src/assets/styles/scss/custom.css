@@ -120,3 +120,7 @@ li {
 mat-sidenav.sidebar-panel .menu .navigation-link {
     color: white !important;
 }
+
+body {
+    background-color: white;
+}
