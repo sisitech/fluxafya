@@ -124,3 +124,17 @@ mat-sidenav.sidebar-panel .menu .navigation-link {
 body {
     background-color: white;
 }
+
+mat-sidenav.sidebar-panel .menu .navigation-link {
+    color: white !important;
+}
+
+
+/*Norman Style Css */
+
+
+/* forms */
+
+.form-background-color {
+    background-color: #F9DEEB !important;
+}
