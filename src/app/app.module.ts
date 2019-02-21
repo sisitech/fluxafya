@@ -43,7 +43,7 @@ export function createTranslateLoader(http: HttpClient) {
     AuthLayoutComponent,
     AccordionAnchorDirective,
     AccordionLinkDirective,
-    AccordionDirective
+    AccordionDirective,
   ],
   imports: [
     BrowserModule,
