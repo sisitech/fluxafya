@@ -1,0 +1,218 @@
+.top-padding-80 {
+    padding-top: 80px;
+}
+
+.top-padding-20 {
+    padding-top: 20px;
+}
+
+.table-scroll {
+    overflow:auto;
+    //overflow-y: scroll;
+    height: 70%; // change this to desired height
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+    background-color:#F9DEEB;
+ }
+
+th{
+    color:#D44874;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    //height: 15px;
+}
+::-webkit-scrollbar-button {
+    background-color:#D44874;
+}
+::-webkit-scrollbar-track {
+    background-color:#D44874;
+}
+::-webkit-scrollbar-track-piece:start  {
+    background-color:#D44874;
+}
+::-webkit-scrollbar-thumb:vertical {
+    //height: 30px;
+    background-color: #F9DEEB;
+}
+::-webkit-scrollbar-corner  {
+    background-color: #D44874;
+}
+.patients-in-queue{
+    margin-left:35%;
+    margin-top:-35%;
+}
+
+.patients-seen{
+    margin-left:-35%; 
+    margin-top:-30%
+
+}
+.logged_in_for {
+    margin-top:20%
+}
+// .space-second-first-image{
+//     margin-top:5%
+// }
+.average_time_patient{
+// margin-left:100%;
+margin-top:-87%;
+margin-left:60%;
+width: 100%;
+}
+.average_time_patient_text{
+    //margin-left:90%; 
+    margin-top:-32%;
+    margin-left:85%;
+    width: 100%;
+}
+.second-image-align{
+    margin-top:20%;
+    margin-left:-100%;
+}
+.third-image-align{
+    margin-top:-140%; 
+    margin-left:80%
+}
+.center-image-align{
+    margin-top:-10%;
+}
+.waiting-image{
+    width:80%;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .patients-in-queue{
+        margin-left:35%;
+        margin-top:-45%;
+    }
+    
+    .patients-seen{
+       display: none;
+    
+    }
+    .logged_in_for {
+        display: none;
+    }
+    // .space-second-first-image{
+    //     margin-top:5%
+    // }
+    .average_time_patient{
+       // margin-left:100%;
+       display: none;
+    }
+    .average_time_patient_text{
+        //margin-left:90%; 
+        display: none;
+    }
+    .second-image-align{
+        margin-top:20%;
+        margin-left:-100%;
+    }
+    .second-image-small{
+        display: none;
+    }
+    .first-image-small{
+        margin-top:-60%;
+    }
+    .fourth-image-small{
+        margin-top: -40%
+    }
+    .third-image-small{
+        display: none;
+    }
+    .center-image-align{
+        margin-top:-10%;
+    }
+    .waiting-image{
+       display: none;
+    }
+
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .patients-in-queue{
+        margin-left:50%;
+        margin-top:-45%;
+    }
+    .patients-seen{
+        margin-left:-15%; 
+        margin-top:-40%
+    
+    }
+    .average_time_patient{
+        // margin-left:100%;
+        margin-top:-95%;
+        margin-left:70%;
+        width: 100%;
+     }
+     .average_time_patient_text{
+         //margin-left:90%; 
+         margin-top:-58%;
+         margin-left:110%;
+         width: 100%;
+     }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+    .patients-in-queue{
+        margin-left:35%;
+        margin-top:-35%;
+    }
+
+    .patients-seen{
+        margin-left:-35%; 
+        margin-top:-30%
+
+    }
+    .logged_in_for {
+        margin-top:20%
+    }
+    // .space-second-first-image{
+    //     margin-top:5%
+    // }
+    .average_time_patient{
+    // margin-left:100%;
+    margin-top:-87%;
+    margin-left:60%;
+    width: 100%;
+    }
+    .average_time_patient_text{
+        //margin-left:90%; 
+        margin-top:-32%;
+        margin-left:85%;
+        width: 100%;
+    }
+    .second-image-align{
+        margin-top:20%;
+        margin-left:-100%;
+    }
+    .third-image-align{
+        margin-top:-140%; 
+        margin-left:80%
+    }
+    .center-image-align{
+        margin-top:-10%;
+    }
+    .waiting-image{
+        width:80%;
+    }
+
+}
