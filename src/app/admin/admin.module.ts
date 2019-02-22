@@ -1,3 +1,4 @@
+import { AddhealthcenterComponent } from './addhealthcenter/addhealthcenter.component';
 import { AdminRoutes } from './admin.routing';
 import { AdminComponent } from './admin.component';
 import { NgModule } from '@angular/core';
@@ -11,6 +12,6 @@ import { AdminLandingComponent } from '../admin-landing/admin-landing.component'
     CommonModule,
     RouterModule.forChild(AdminRoutes)
   ],
-  declarations: [RolesComponent, AdminComponent, AdminLandingComponent]
+  declarations: [RolesComponent, AdminComponent, AdminLandingComponent, AddhealthcenterComponent]
 })
 export class AdminModule { }

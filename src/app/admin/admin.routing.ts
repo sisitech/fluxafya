@@ -1,3 +1,4 @@
+import { AddhealthcenterComponent } from './addhealthcenter/addhealthcenter.component';
 import { AdminComponent } from './admin.component';
 import { Routes } from '@angular/router';
 import { RolesComponent } from './roles/roles.component';
@@ -15,6 +16,13 @@ export const AdminRoutes: Routes = [
         }
       },
       {
+        path: 'see-healthcenter',
+        component: AddhealthcenterComponent,
+        data: {
+          heading: 'Health Center'
+        }
+      },
+      {
         path: 'landing',
         component: AdminLandingComponent,
         data: {
@@ -27,7 +35,8 @@ export const AdminRoutes: Routes = [
         data: {
           heading: 'System Users'
         }
-      }
+      },
+      
     ]
   }
 ];

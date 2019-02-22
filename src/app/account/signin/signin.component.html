@@ -1,70 +1,74 @@
-<div class="d-flex justify-content-center align-items-center min-height-80 h-100" style="background-color: white;">
-    <div class="auth-container" style="margin-top: -50px;">
-        <div class="card card-body m-3 p-5" style="box-shadow: none;">
-            <img src="./assets/images/landing/hc-logo.png" class="logo" alt="">
-            <form [formGroup]="form" (ngSubmit)="onSubmit()" style="margin-top:10%">
-                <fieldset class="form-group mb-4" [ngClass]="{'has-danger': form.controls['uname'].hasError('required') && form.controls['uname'].touched}">
-                    <input type="text" class="form-control" placeholder="username" [formControl]="form.controls['uname']" [ngClass]="{'form-control-danger': form.controls['uname'].hasError('required') && form.controls['uname'].touched}" />
-                    <div class="invalid-feedback" *ngIf="form.controls['uname'].hasError('required') && form.controls['uname'].touched">Username is required.</div>
-                </fieldset>
-                <fieldset class="form-group mb-4" [ngClass]="{'has-danger': form.controls['password'].hasError('required') && form.controls['password'].touched}">
-                    <input type="password" class="form-control" placeholder="********" [formControl]="form.controls['password']" [ngClass]="{'form-control-danger': form.controls['password'].hasError('required') && form.controls['password'].touched}" />
-                    <div class="invalid-feedback" *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched">Password is required.</div>
-                </fieldset>
 
-                <div *ngIf="error && !success" class="text-center alert alert-danger rounded-alerts">{{error}}</div>
-                <div *ngIf="success && !success" class="text-center alert alert-success rounded-alerts">{{success}}</div>
-                <div class="d-flex w-100 align-items-center">
-                    <div class="col">
-                        <label class="custom-control custom-checkbox mb-0">
-                          <input type="checkbox" class="custom-control-input">
-                          <span class="custom-control-label"></span>
-                          <span class="custom-control-description">Stay logged in</span>
-                        </label>
-                    </div>
-                    <div class="col text-right">
-                        <a [routerLink]="['/account/forgot']">Recover password</a>
-                    </div>
+<div style="height:60%">
+        <div class="d-flex justify-content-center align-items-center min-height-90 h-90" style="background-color: white;">
+            <div class="auth-container" style="margin-top: -50px;">
+                <div class="card card-body m-3 p-5" style="box-shadow: none;">
+                    <img src="./assets/images/landing/hc-logo.png" class="logo" alt="">
+                    <form [formGroup]="form" (ngSubmit)="onSubmit()" style="margin-top:10%">
+                        <fieldset class="form-group mb-4" [ngClass]="{'has-danger': form.controls['uname'].hasError('required') && form.controls['uname'].touched}">
+                            <input type="text" class="form-control" placeholder="username" [formControl]="form.controls['uname']" [ngClass]="{'form-control-danger': form.controls['uname'].hasError('required') && form.controls['uname'].touched}" />
+                            <div class="invalid-feedback" *ngIf="form.controls['uname'].hasError('required') && form.controls['uname'].touched">Username is required.</div>
+                        </fieldset>
+                        <fieldset class="form-group mb-4" [ngClass]="{'has-danger': form.controls['password'].hasError('required') && form.controls['password'].touched}">
+                            <input type="password" class="form-control" placeholder="********" [formControl]="form.controls['password']" [ngClass]="{'form-control-danger': form.controls['password'].hasError('required') && form.controls['password'].touched}" />
+                            <div class="invalid-feedback" *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched">Password is required.</div>
+                        </fieldset>
+
+                        <div *ngIf="error && !success" class="text-center alert alert-danger rounded-alerts">{{error}}</div>
+                        <div *ngIf="success && !success" class="text-center alert alert-success rounded-alerts">{{success}}</div>
+                        <div class="d-flex w-100 align-items-center">
+                            <div class="col">
+                                <label class="custom-control custom-checkbox mb-0">
+                                <input type="checkbox" class="custom-control-input">
+                                <span class="custom-control-label"></span>
+                                <span class="custom-control-description">Stay logged in</span>
+                                </label>
+                            </div>
+                            <div class="col text-right">
+                                <a [routerLink]="['/account/forgot']">Recover password</a>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center mt-4 mb-4">
+                            <button (click)="onSubmit()" class="btn btn-primary" type="submit">login</button>
+                            <!-- <a [routerLink]="['/']">
+                                <button class="btn btn-primary" type="submit">login</button>
+                            </a> -->
+                        </div>
+                        <div class="text-center">
+                            <p>Don't have an account? <a [routerLink]="['/account/signup']">Request for Account</a></p>
+                        </div>
+                    </form>
                 </div>
-                <div class="d-flex justify-content-center mt-4 mb-4">
-                    <button (click)="onSubmit()" class="btn btn-primary" type="submit">login</button>
-                    <!-- <a [routerLink]="['/']">
-                        <button class="btn btn-primary" type="submit">login</button>
-                    </a> -->
-                </div>
-                <div class="text-center">
-                    <p>Don't have an account? <a [routerLink]="['/account/signup']">Request for Account</a></p>
-                </div>
-            </form>
+            </div>
+            <!-- <div class="bg-cover"></div> -->
+
         </div>
-    </div>
-    <!-- <div class="bg-cover"></div> -->
 
+        <nav class="navbar custom-navbar small px-3" style="background-color:white;">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-color" style="color:#cf005d">
+                            <span>&copy;</span> <span class="">FluxAfya2019 &nbsp; <img src="./assets/images/landing/kenyan-small.png" style = "width: 20%; padding-top: 0px;" class="logo" alt=""></span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav hidden-xs-down">
+                    <li class="nav-item">
+                        About Us&nbsp;
+                    </li>
+                    <li class="nav-item">
+                        Partners&nbsp;
+                    </li>
+                    <li class="nav-item">
+                        Contact Us&nbsp;
+                    </li>
+                    <!-- <li class="nav-item" style="color: #000">
+                        <img src="./assets/images/landing/kenya-small.png" style = "width: 20%; padding-top: 0px;" class="logo" alt="">
+                    </li> -->
+                </ul>
+            </nav>
 </div>
 
-<nav class="navbar custom-navbar small px-3" style="background-color:white;">
-    <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-            <a class="nav-link text-color" style="color:#cf005d">
-                <span>&copy;</span> <span class="">FluxAfya2019 &nbsp; <img src="./assets/images/landing/kenyan-small.png" style = "width: 20%; padding-top: 0px;" class="logo" alt=""></span>
-            </a>
-        </li>
-    </ul>
-    <ul class="navbar-nav hidden-xs-down">
-        <li class="nav-item">
-            About Us&nbsp;
-        </li>
-        <li class="nav-item">
-            Partners&nbsp;
-        </li>
-        <li class="nav-item">
-            Contact Us&nbsp;
-        </li>
-        <!-- <li class="nav-item" style="color: #000">
-            <img src="./assets/images/landing/kenya-small.png" style = "width: 20%; padding-top: 0px;" class="logo" alt="">
-        </li> -->
-    </ul>
-</nav>
 
 
 

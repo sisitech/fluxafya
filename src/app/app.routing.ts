@@ -108,6 +108,10 @@ export const AppRoutes: Routes = [
       {
         path: 'profile',
         loadChildren: './social/social.module#SocialModule'
+      },
+      {
+        path: 'healthcenter',
+        loadChildren: './healthcenter/healthcenter.module#HealthcenterModule'
       }
     ]
   },
