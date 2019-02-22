@@ -3,6 +3,8 @@ import { AdminComponent } from './admin.component';
 import { Routes } from '@angular/router';
 import { RolesComponent } from './roles/roles.component';
 import { AdminLandingComponent } from '../admin-landing/admin-landing.component';
+import { AdminSettingsComponent } from '../admin-settings/admin-settings.component';
+import { AdminSuperLandingComponent } from '../admin-super-landing/admin-super-landing.component';
 
 export const AdminRoutes: Routes = [
   {
@@ -27,6 +29,20 @@ export const AdminRoutes: Routes = [
         component: AdminLandingComponent,
         data: {
           heading: 'System Users'
+        }
+      },
+      {
+        path: 'settings',
+        component: AdminSettingsComponent,
+        data: {
+          heading: 'Settings'
+        }
+      },
+      {
+        path: 'super-admin-landing',
+        component: AdminSuperLandingComponent,
+        data: {
+          heading: 'Settings'
         }
       },
       {

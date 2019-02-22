@@ -14,7 +14,7 @@ import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 
 import { AppRoutes } from './app.routing';
 import { AppComponent } from './app.component';
-import { LandingpageComponent } from './landingpage/landingpage.component';
+
 import {
   MenuComponent,
   HeaderComponent,
@@ -26,7 +26,6 @@ import {
   AccordionLinkDirective,
   AccordionDirective
 } from './core';
-import { AdminComponent } from './admin/admin.component';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -44,7 +43,7 @@ export function createTranslateLoader(http: HttpClient) {
     AuthLayoutComponent,
     AccordionAnchorDirective,
     AccordionLinkDirective,
-    AccordionDirective,
+    AccordionDirective
   ],
   imports: [
     BrowserModule,
