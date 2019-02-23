@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-center align-items-center min-height-80 h-100" style="background-color: white;">
     <div class="auth-container" style="margin-top: -50px;">
         <div class="card card-body m-3 p-5" style="box-shadow: none;">
-            <img src="./assets/images/landing/hc-logo.png" class="logo" alt="">
+            <img src="assets/landing/images/logo.png" class="logo" alt="">
             <form [formGroup]="form" (ngSubmit)="onSubmit()" style="margin-top:10%">
                 <fieldset class="form-group mb-4" [ngClass]="{'has-danger': form.controls['uname'].hasError('required') && form.controls['uname'].touched}">
                     <input type="text" class="form-control" placeholder="username" [formControl]="form.controls['uname']" [ngClass]="{'form-control-danger': form.controls['uname'].hasError('required') && form.controls['uname'].touched}" />
