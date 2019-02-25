@@ -106,46 +106,46 @@ export class SigninComponent implements OnInit {
     });
   }
 
-  onSubmit() {
-    var email = this.form.value.uname;
-    var password = this.form.value.password;
-
-    console.log(this.USERS, 'email:', email, 'password:', password);
-
-    for(let a=0; a < this.USERS.length; a++){
-      if(email == this.USERS[a].username && password == this.USERS[a].password){
-        console.log('great')
-        this.success = 'Successfully logged in ... ';
-        localStorage.setItem('userProfile', JSON.stringify(this.USERS[a]));
-        this.router.navigate(['/dashboard'])
-        return;
-      }else{
-        console.log('wrong')
-        this.error = 'Wrong email-password combination',
-        this.router.navigate(['/account/signin'])
-      }
-    }
-    this.router.navigate(['/']);
-  }
   // onSubmit() {
-  //   // this.loading = true;
-  //  this.loginService.login(this.form.value.uname, this.form.value.password ).subscribe(data => {
-  //      const userprofile = JSON.parse(localStorage.getItem('userprofile'));
-  //     //  console.log(userprofile);
-  //      // this.loading = false;
-  //        // localStorage.setItem('token', data.access_token);
-  //        this.form.reset();
-  //       // this.route.navigate(['/students']);
-  //        this.router.navigate(['/']);
-  //        // this.loading = false;
-  //    }, error => {
-  //      console.log(error);
-  //      let err = '';
-  //      if (error === 'invalid_grant') {
-  //        err = 'Username/Password mismatch';
-  //      } else {
-  //        err = 'Kindly check your internet connection or Kindly contact your server administrator';
-  //      }
-  //    });
+  //   var email = this.form.value.uname;
+  //   var password = this.form.value.password;
+
+  //   console.log(this.USERS, 'email:', email, 'password:', password);
+
+  //   for(let a=0; a < this.USERS.length; a++){
+  //     if(email == this.USERS[a].username && password == this.USERS[a].password){
+  //       console.log('great')
+  //       this.success = 'Successfully logged in ... ';
+  //       localStorage.setItem('userProfile', JSON.stringify(this.USERS[a]));
+  //       this.router.navigate(['/dashboard'])
+  //       return;
+  //     }else{
+  //       console.log('wrong')
+  //       this.error = 'Wrong email-password combination',
+  //       this.router.navigate(['/account/signin'])
+  //     }
+  //   }
+  //   this.router.navigate(['/']);
   // }
+  onSubmit() {
+    // this.loading = true;
+   this.loginService.login(this.form.value.uname, this.form.value.password ).subscribe(data => {
+       const userprofile = JSON.parse(localStorage.getItem('userprofile'));
+        console.log(userprofile);
+       // this.loading = false;
+         // localStorage.setItem('token', data.access_token);
+        // this.form.reset();
+        // this.route.navigate(['/students']);
+         this.router.navigate(['/dashboard']);
+         // this.loading = false;
+     }, error => {
+       console.log(error);
+       let err = '';
+       if (error === 'invalid_grant') {
+         err = 'Username/Password mismatch';
+       } else {
+         err = 'Kindly check your internet connection or Kindly contact your server administrator';
+       }
+     });
+  }
 }

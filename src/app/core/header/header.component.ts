@@ -16,11 +16,11 @@ export class HeaderComponent {
   userinitials:any;
 
   constructor(private router: Router){
-  	let profile = JSON.parse(localStorage.getItem('userProfile'));
-  	this.username = profile.name;
-  	let initials = profile.name.split(' ')
-  	let initialA = initials[0].charAt(0).toUpperCase()
-  	let initialB = initials[1].charAt(0).toUpperCase()
+    let profile = JSON.parse(localStorage.getItem('userprofile'));
+    console.log(profile);
+  	this.username = profile.first_name + ' ' + profile.last_name ;
+  	let initialA = profile.first_name[0].charAt(0).toUpperCase()
+  	let initialB = profile.last_name[1].charAt(0).toUpperCase()
   	this.userinitials = initialA+initialB
 
   }

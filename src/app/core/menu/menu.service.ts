@@ -756,13 +756,15 @@ const LAB = [
 export class MenuService {
 
   getAll(): Menu[] {
-    let profile = JSON.parse(localStorage.getItem('userProfile'));
+    let profile = JSON.parse(localStorage.getItem('userprofile'));
 
-    if(profile.role == 'SA'){
+    if(profile.role == 'FA'){
+      return MENUITEMS;
+    } else if(profile.role == 'MFA'){
       return MENUITEMS;
     } else if(profile.role == 'R'){
       return RECEPTION;
-    } else if (profile.role == 'PH') {
+    } else if (profile.role == 'P') {
       return PHARMACY;
     } else if (profile.role == 'F') {
       return FINANCE;
