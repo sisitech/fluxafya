@@ -17,7 +17,7 @@ import { ProviderService } from 'src/app/shared/provider/provider.service';
 
 
 export class SigninComponent implements OnInit {
- 
+
    USERS = [
     {
       name: 'Dennis Sigei',
@@ -91,10 +91,10 @@ export class SigninComponent implements OnInit {
       username: 'doctor',
       password: 'admin123'
     }
-  ]
+  ];
 
-  public error:any;
-  public success:any;
+  public error: any;
+  public success: any;
 
   public form: FormGroup;
   constructor(private fb: FormBuilder, private router: Router, private loginService: ProviderService) {}
