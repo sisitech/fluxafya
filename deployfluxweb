@@ -1,0 +1,86 @@
+#!/bin/bash
+echo ""
+echo "************** SISITECH ***************"
+DEPLOY_FOLDER="../deploy-${PWD##*/}"
+BUILD_FOLDER="dist/*"
+
+echo "Deployment folder '$DEPLOY_FOLDER'"
+##Create the deploy folder if it does not exists
+check_is_ok(){
+        if [ $? -eq 0 ]; then
+                echo OK
+        else
+                echo ""
+		echo "*************** FAILED (;-;)  ***********"
+		exit 1
+        fi
+}
+mkdir -p $DEPLOY_FOLDER
+check_is_ok 
+
+COMMIT=${1?Error:No commit message provided. try "$0 'first  commit'"}
+
+###Build and copy into the deployment folder
+echo ""
+echo "************** BUILDING ***************"
+echo "Building for production..."
+#ng build --prod
+check_is_ok ##Check the build was successful
+
+echo "Copying files from $BUILD_FOLDER to $DEPLOY_FOLDER"
+cp -r $BUILD_FOLDER $DEPLOY_FOLDER
+check_is_ok
+
+##Move to the deployment folder 
+cd $DEPLOY_FOLDER
+#Git initializations
+echo ""
+echo ""
+echo "************** GIT ***************"
+
+if [ ! -d ".git" ]; then
+  # Initialize git .
+  echo "Initializing git for the first time"
+  echo "First time setup."
+  git init
+  echo "Please enter your git username (github/bitbucket) ?"
+  read username
+  echo "Please enter a branch name !!"
+  read branchname
+  echo "Enter the git repositry link without https://"
+  read gitrepo
+  git checkout -b $branchname
+  git remote add origin https://$username@$gitrepo
+  echo "Git initialization Done for $username"
+fi
+echo "Git initialization done."
+BRANCH=$(git branch | grep \* | cut -d ' ' -f2)
+check_is_ok
+
+echo ""
+echo ""
+echo "************ PUSHING TO GIT ************"
+echo "Deploying with commit message:==> '$1'"
+#git status
+git add --all;git commit -m $1
+git push origin $BRANCH
+
+check_is_ok
+
+###CALL THE SERVER SIDE SCRIPT
+echo ""
+echo ""
+echo "************ WEBFACTION UPDATE **********"
+echo "Updating webfaction instances..."
+sshpass -p '!#18S!s!t3ch:)' ssh sisitec@sisitech.com << EOF
+	cd /home/sisitec/scripts/;
+	./updatefluxweb $BRANCH
+EOF
+
+echo ""
+echo ""
+echo "***************** DONE ******************"
+echo "*********** micha@SISITECH.com ***********"
+echo "*************** THANK YOU ***************"
+echo ""
+echo ""

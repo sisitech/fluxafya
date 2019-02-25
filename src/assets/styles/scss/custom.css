@@ -97,6 +97,10 @@ li {
     padding-top: 80px;
 }
 
+.top-padding-100 {
+    padding-top: 100px;
+}
+
 .img-landing {
     width: 20%;
 }
@@ -113,12 +117,24 @@ li {
     background-color: white;
 }
 
-mat-sidenav.sidebar-panel .menu .navigation-link{
-    color:white !important;
+mat-sidenav.sidebar-panel .menu .navigation-link {
+    color: white !important;
 }
 
+body {
+    background-color: white;
+}
+
+mat-sidenav.sidebar-panel .menu .navigation-link {
+    color: white !important;
+}
+
+
 /*Norman Style Css */
+
+
 /* forms */
-.form-background-color{
+
+.form-background-color {
     background-color: #F9DEEB !important;
 }
