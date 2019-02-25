@@ -9,37 +9,27 @@
                 <hr>
                 <div class="card-body">
                     <div class="card">
-                        <div class="card-header">Measure of patient's vitals</div>
+                        <div class="card-header">PATIENT'S VITALS</div>
 
                         <div class="card-body">
                             <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-2 col-form-label">Weight</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="staticEmail" value="80 Kgs">
+                                <div class="col-sm-6">
+                                    <div class="col-sm-6">
+                                        
+                                    </div>
+                                    <div class="col-sm-6">
+
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-2 col-form-label">Temperature</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="staticEmail" value="30">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-2 col-form-label">Blood Pressure</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="staticEmail" value="120 Systolic">
-                                </div>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="staticEmail" value="80 Diastolic">
-                                </div>
-                                <div class="col-sm-2">
-                                    <input type="text" class="form-control" id="staticEmail" value="120/80">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-2 col-form-label">Allergies</label>
-                                <div class="col-sm-10">
-                                    <textarea name="" class="form-control" id="" cols="30" rows="8">The patient had no allergies to any drugs.</textarea>
+                                <div class="col-sm-6">
+                                    <label for="staticEmail" class="col-form-label">Allergies</label>
+                                    <div class="col-sm-10">
+                                        <textarea name="" class="form-control form-background-color" id="" cols="30" rows="8">The patient had no allergies to any drugs.</textarea>
+                                    </div>
+                                    <label for="staticEmail" class="col-form-label">Symptoms</label>
+                                    <div class="col-sm-10">
+                                        <textarea name="" class="form-control form-background-color" id="" cols="30" rows="8">The patient had no allergies to any drugs.</textarea>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -57,15 +47,40 @@
                     <div class="form-group row">
                         <label for="staticEmail" class="col-sm-2 col-form-label">Symptoms</label>
                         <div class="col-sm-10">
-                            <textarea name="" class="form-control" id="" cols="30" rows="10">>>text picked from the triage section 
-                    </textarea>
+                            <textarea name="" class="form-control form-background-color" id="" cols="30" rows="10">>>text picked from the triage section 
+                            </textarea>
                         </div>
                     </div>
                     <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-2 col-form-label">Send to lab</label>
+                        <div class="col">
+                            <label class="custom-control custom-checkbox">
+                                <input #labyes id="lab" (change)="onCheckedLabYes(labyes)" name="lab" type="radio"  class="custom-control-input">
+                                <span class="custom-control-label"></span>
+                                <span class="custom-control-description">Yes</span>
+                            </label>
+                            <label class="custom-control custom-checkbox">
+                                <input #labno id="lab" (change)="onCheckedLabNo(labno)"  name="lab" type="radio" class="custom-control-input">
+                                <span class="custom-control-label"></span>
+                                <span class="custom-control-description">No</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div *ngIf="lab_no" class="form-group row">
                         <label for="staticEmail" class="col-sm-2 col-form-label">Diagnosis</label>
                         <div class="col-sm-10">
-                            <textarea name="" class="form-control" id="" cols="30" rows="10"></textarea>
+                            <textarea name="" class="form-control form-background-color" id="" cols="30" rows="10">common cold
+                            </textarea>
                         </div>
+                    </div>
+                    <div *ngIf="lab_yes" class="form-group row">
+                        <label for="staticEmail" class="col-sm-2 col-form-label">Test patient for </label>
+                        <select class="selectpicker col-sm-10 form-background-color" multiple data-live-search="true" style="width:50px;">
+                            <option>Malaria</option>
+                            <option>Urine Sample</option>
+                            <option>Stool Sample</option>
+                            <option>MRI Scan</option>
+                        </select>
                     </div>
 
                     <button type="button" class="btn btn-primary" awPreviousStep>Previous</button>&nbsp;&nbsp;
@@ -76,63 +91,72 @@
                 <hr>
                 <!-- <div class="card-header">Laboratory Tests</div> -->
                 <div class="card-body">
-
                     <div class="form-group row">
-                        <label for="staticEmail" class="col-sm-2 col-form-label">Test patient for </label>
-                        <select class="selectpicker col-sm-10" multiple data-live-search="true" style="width:50px;">
-                    <option>Malaria</option>
-                    <option>Urine Sample</option>
-                    <option>Stool Sample</option>
-                    <option>MRI Scan</option>
-                  </select>
+                        <label for="staticEmail" class="col-sm-2 col-form-label">Lab Test</label>
+                        <div class="col-md-10 mb-3">
+                            <ngb-accordion [closeOthers]="true" #acc="ngbAccordion" activeIds="static-1">
+                                <ngb-panel id="static-1" title="Test 1">
+                                    <ng-template ngbPanelContent>
+                                        <textarea disabled name="" class="form-control form-background-color" id="" cols="30" rows="8">
+                                            Color - Yellow
+                                            Appearance - Hazy
+                                            Glucose - Negative
+                                            Bilirubin - Negative
+                                        </textarea>
+                                    <br><br>
+                                    <button type="button" style="cursor:pointer;" class="btn btn-primary">View Image</button>
+                                    </ng-template>
+                                </ngb-panel>
+                                <ngb-panel id="static-2" title="Test 2">
+                                    <ng-template ngbPanelContent>
+                                        <textarea disabled name="" class="form-control form-background-color" id="" cols="30" rows="8">
+                                            Color - Yellow
+                                            Appearance - Hazy
+                                            Glucose - Negative
+                                            Bilirubin - Negative
+                                        </textarea>
+                                    <br><br>
+                                    <button type="button" style="cursor:pointer;" class="btn btn-primary">View Image</button>
+                                    </ng-template>
+                                </ngb-panel>
+                                <ngb-panel id="static-3" title="Test 3">
+                                    <ng-template ngbPanelContent>
+                                        <textarea disabled name="" class="form-control form-background-color" id="" cols="30" rows="8">
+                                            Color - Yellow
+                                            Appearance - Hazy
+                                            Glucose - Negative
+                                            Bilirubin - Negative
+                                        </textarea>
+                                    <br><br>
+                                    <button type="button" style="cursor:pointer;" class="btn btn-primary">View Image</button>
+                                    </ng-template>
+                                </ngb-panel>
+                            </ngb-accordion>
+                        </div>     
                     </div>
-
-                    <br><br>
                     <hr>
                     <button type="button" class="btn btn-primary" awPreviousStep>Previous</button>&nbsp;&nbsp;
                     <button type="button" class="btn btn-primary" awNextStep>Next</button>
                 </div>
             </aw-wizard-step>
             <aw-wizard-step stepTitle="Treatment & Prescription">
-                <hr>
-                <!-- <div class="card-header">Treatment & Prescription</div> -->
-
                 <div class="card-body">
-                        <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-2 col-form-label">Lab Test</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="staticEmail" value="Urine Sample">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-2 col-form-label">Test Report</label>
-                                <div class="col-sm-10">
-                                    <textarea name="" class="form-control" id="" cols="30" rows="8">
-Color - Yellow
-Appearance - Hazy
-Glucose - Negative
-Bilirubin - Negative
-                                    </textarea>
-                                </div>
-                            </div>
-
-                    <hr>
                     <div class="form-group row">
                         <label for="staticEmail" class="col-sm-2 col-form-label">Treatment notes</label>
                         <div class="col-sm-10">
-                            <textarea name="" class="form-control" id="" cols="30" rows="10"></textarea>
+                            <textarea name="" class="form-control form-background-color" id="" cols="30" rows="10"></textarea>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="staticEmail" class="col-sm-2 col-form-label">Prescription notes</label>
                         <div class="col-sm-10">
-                            <textarea name="" class="form-control" id="" cols="30" rows="10"></textarea>
+                            <textarea name="" class="form-control form-background-color" id="" cols="30" rows="10"></textarea>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="staticEmail" class="col-sm-2 col-form-label">Choose Follow-up visit date</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="date" value="2019-01-15" id="example-date-input">
+                            <input class="form-control form-background-color" type="date" value="2019-01-15" id="example-date-input">
                         </div>
                     </div>
                     <button type="button" class="btn btn-primary" awPreviousStep>Previous</button>&nbsp;&nbsp;

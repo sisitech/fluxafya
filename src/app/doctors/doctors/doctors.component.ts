@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  FormControl
+} from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-doctors',
@@ -7,7 +14,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DoctorsComponent implements OnInit {
 
-  constructor() { }
+  lab_yes = false;
+  lab_no = false;
+
+  constructor(private fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {}
 
@@ -15,4 +25,20 @@ export class DoctorsComponent implements OnInit {
     // do nothing
     console.log('Ok Doc')
   }
+
+  onCheckedLabYes(element) {
+    // console.log(element.checked, 'checked event');
+   if (element.checked === true) {
+        this.lab_no = false;
+        this.lab_yes = true;
+     }
+  }
+
+  onCheckedLabNo(element) {
+    // console.log(element.checked, 'checked event');
+   if (element.checked === true) {
+      this.lab_no = true;
+      this.lab_yes = false;
+     }
+ }
 }

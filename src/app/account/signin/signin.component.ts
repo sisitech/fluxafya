@@ -21,7 +21,7 @@ export class SigninComponent implements OnInit {
    USERS = [
     {
       name: 'Dennis Sigei',
-      role: 'SA',
+      role: 'FA',
       username: 'dsigei@gmail.com',
       password: '#dsigei'
     },
@@ -116,7 +116,7 @@ export class SigninComponent implements OnInit {
   //     if(email == this.USERS[a].username && password == this.USERS[a].password){
   //       console.log('great')
   //       this.success = 'Successfully logged in ... ';
-  //       localStorage.setItem('userProfile', JSON.stringify(this.USERS[a]));
+  //       localStorage.setItem('userprofile', JSON.stringify(this.USERS[a]));
   //       this.router.navigate(['/dashboard'])
   //       return;
   //     }else{

@@ -10,6 +10,8 @@ import { ArchwizardModule } from 'angular-archwizard';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdDemoModule } from '../components/ng-bootstrap';
+import { FormModule } from '../form/form.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -17,7 +19,9 @@ import { NgbdDemoModule } from '../components/ng-bootstrap';
     ArchwizardModule,
     RouterModule.forChild(DoctorsRoutes),
     NgbModule,
-    NgbdDemoModule
+    NgbdDemoModule,
+    FormModule,
+    ReactiveFormsModule
   ],
   declarations: [DoctorsComponent, PatientsComponent]
 })
