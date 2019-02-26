@@ -221,6 +221,12 @@ const MENUITEMS = [
         name: 'Manage Users',
         type: 'link',
         icon: 'ion-ios-people'
+      },
+      {
+        state: 'see-healthcenter',
+        name: 'Add Health Center',
+        type: 'link',
+        icon: 'ion-ios-people'
       }
     ]
   },
