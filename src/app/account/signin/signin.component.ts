@@ -136,7 +136,7 @@ export class SigninComponent implements OnInit {
          // localStorage.setItem('token', data.access_token);
         // this.form.reset();
         // this.route.navigate(['/students']);
-         this.router.navigate(['/dashboard']);
+         this.router.navigate(['/patients/register']);
          // this.loading = false;
      }, error => {
        console.log(error);
