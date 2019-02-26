@@ -20,6 +20,112 @@
     </div>
 </div>
 <div class="row">
+    <div class="col-sm-12 col-md-4 col-lg-4">
+        <div class="card">
+            <div class="card-header d-block">
+                <p class="mb-0">Hopsital Attendance</p>
+                <small class="d-block text-muted">Pie Chart Analytics</small>
+            </div>
+            <div class="card-body px-0 py-4  rounded-bottom">
+                <div>
+                    <ngx-charts-pie-chart class="chart-container" [scheme]="colorScheme" [results]="single" [legend]="showLegend" [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut" [arcWidth]="arcWidth" (legendLabelClick)="onLegendLabelClick($event)"
+                        [gradient]="gradient" [tooltipDisabled]="tooltipDisabled" (select)="select($event)">
+                    </ngx-charts-pie-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-4">
+        <div class="card">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card-header d-block">
+                        <p class="mb-0">Male</p>
+                        <small class="d-block text-muted">Patient Attendance</small>
+                    </div>
+                    <div class="card-body px-0 py-4  rounded-bottom">
+                        <div class="text-center top-image-position">
+                            <img style="height:160%; width:92%;" src="assets/images/labs/Waiting.png" alt="" class="img-links">
+                            <p style="font-size:20px;">37%</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card-header d-block">
+                        <p class="mb-0">Female</p>
+                        <small class="d-block text-muted">Patient Attendance</small>
+                    </div>
+                    <div class="card-body px-0 py-4  rounded-bottom">
+                        <div class="text-center top-image-position">
+                            <img style="height:160%; width:92%;" src="assets/images/labs/Waiting.png" alt="" class="img-links">
+                            <p style="font-size:20px;">63%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-4">
+        <div class="card">
+            <div class="card-header d-block">
+                <p class="mb-0">Hosptial Patient Breakdown</p>
+                <small class="d-block text-muted">Pie Chart Analytics</small>
+            </div>
+            <div class="card-body px-0 py-4  rounded-bottom">
+                <div>
+                    <ngx-charts-pie-chart class="chart-container" [scheme]="colorScheme" [results]="single" [legend]="showLegend" [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut" [arcWidth]="arcWidth" (legendLabelClick)="onLegendLabelClick($event)"
+                        [gradient]="gradient" [tooltipDisabled]="tooltipDisabled" (select)="select($event)">
+                    </ngx-charts-pie-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 col-md-4 col-lg-4">
+        <div class="card">
+            <div class="card-header d-block">
+                <p class="mb-0">Mother & Child</p>
+                <small class="d-block text-muted">Analytics Summary</small>
+            </div>
+            <div class="card-body  rounded-bottom">
+                <!-- <h6 class="pt-4">Progress bars with custom labels</h6> -->
+                <ngbd-progressbar-labels></ngbd-progressbar-labels>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-4">
+            <div class="card">
+                <div class="card-header d-block">
+                    <p class="mb-0">Disease Breakdown</p>
+                    <small class="d-block text-muted">Pie Chart Analytics</small>
+                </div>
+                <div class="card-body px-0 py-4  rounded-bottom">
+                    <div>
+                        <ngx-charts-pie-chart class="chart-container" [scheme]="colorScheme" [results]="single" [legend]="showLegend" [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut" [arcWidth]="arcWidth" (legendLabelClick)="onLegendLabelClick($event)"
+                            [gradient]="gradient" [tooltipDisabled]="tooltipDisabled" (select)="select($event)">
+                        </ngx-charts-pie-chart>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="col-sm-12 col-md-4 col-lg-4">
+        <div class="card">
+            <div class="card-header d-block">
+                <p class="mb-0">Lab Tests</p>
+                <small class="d-block text-muted">Horizontal Bar Chart Analytics</small>
+            </div>
+            <div class="card-body px-0 py-4  rounded-bottom">
+                <div>
+                    <ngx-charts-bar-horizontal class="chart-container" [scheme]="colorScheme" [schemeType]="schemeType" [results]="single" [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel"
+                        [tooltipDisabled]="tooltipDisabled" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [showGridLines]="showGridLines" [barPadding]="barPadding" [roundDomains]="roundDomains" (legendLabelClick)="onLegendLabelClick($event)" (select)="select($event)">
+                    </ngx-charts-bar-horizontal>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
     <div class="col-sm-12 col-md-6 col-lg-4">
         <div class="card">
             <div class="card-header d-block">
