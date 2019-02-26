@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminLandingSuperComponent } from './admin-landing-super.component';
+import { AddhealthcenterComponent } from './addhealthcenter.component';
 
-describe('AdminLandingSuperComponent', () => {
-  let component: AdminLandingSuperComponent;
-  let fixture: ComponentFixture<AdminLandingSuperComponent>;
+describe('AddhealthcenterComponent', () => {
+  let component: AddhealthcenterComponent;
+  let fixture: ComponentFixture<AddhealthcenterComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminLandingSuperComponent ]
+      declarations: [ AddhealthcenterComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdminLandingSuperComponent);
+    fixture = TestBed.createComponent(AddhealthcenterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
