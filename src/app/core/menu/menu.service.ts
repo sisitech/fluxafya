@@ -26,7 +26,7 @@ const MENUITEMS = [
     name: 'MAIN'
   },
   {
-    state: '/',
+    state: '/dashboard',
     name: 'HOME',
     type: 'link',
     icon: 'ion-ios-speedometer'
@@ -269,7 +269,7 @@ const RECEPTION = [
     name: 'MAIN'
   },
   {
-    state: '/',
+    state: '/dashboard',
     name: 'HOME',
     type: 'link',
     icon: 'ion-ios-speedometer'
@@ -332,7 +332,7 @@ const PHARMACY = [
     name: 'MAIN'
   },
   {
-    state: '/',
+    state: '/dashboard',
     name: 'HOME',
     type: 'link',
     icon: 'ion-ios-speedometer'
@@ -389,7 +389,7 @@ const RECFINANCE = [
     name: 'MAIN'
   },
   {
-    state: '/',
+    state: '/dashboard',
     name: 'HOME',
     type: 'link',
     icon: 'ion-ios-speedometer'
@@ -465,7 +465,7 @@ const FINANCE = [
     name: 'MAIN'
   },
   {
-    state: '/',
+    state: '/dashboard',
     name: 'HOME',
     type: 'link',
     icon: 'ion-ios-speedometer'
@@ -522,7 +522,7 @@ const TRIAGE = [
     name: 'MAIN'
   },
   {
-    state: '/',
+    state: '/dashboard',
     name: 'HOME',
     type: 'link',
     icon: 'ion-ios-speedometer'
@@ -579,7 +579,7 @@ const PERSONAL = [
     name: 'MAIN'
   },
   {
-    state: '/',
+    state: '/dashboard',
     name: 'HOME',
     type: 'link',
     icon: 'ion-ios-speedometer'
@@ -636,7 +636,7 @@ const DOCTOR = [
     name: 'MAIN'
   },
   {
-    state: '/',
+    state: '/dashboard',
     name: 'HOME',
     type: 'link',
     icon: 'ion-ios-speedometer'
@@ -706,7 +706,7 @@ const LAB = [
     name: 'MAIN'
   },
   {
-    state: '/',
+    state: '/dashboard',
     name: 'HOME',
     type: 'link',
     icon: 'ion-ios-speedometer'
