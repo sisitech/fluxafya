@@ -3,7 +3,7 @@ echo ""
 echo "************** SISITECH ***************"
 DEPLOY_FOLDER="../deploy-${PWD##*/}"
 BUILD_FOLDER="dist/*"
-BUILD_CMD=""
+
 echo "Deployment folder '$DEPLOY_FOLDER'"
 ##Create the deploy folder if it does not exists
 check_is_ok(){
@@ -24,14 +24,7 @@ COMMIT=${1?Error:No commit message provided. try "$0 'first  commit'"}
 echo ""
 echo "************** BUILDING ***************"
 echo "Building for production..."
-echo "Press n key to skip build"
-read is_build
-if [[ $is_build == "n" ||$is_build == "N"  ]];then
-	echo "Build skipped."	
-else
-	echo "building....."
-	ng build --prod
-fi
+#ng build --prod
 check_is_ok ##Check the build was successful
 
 echo "Copying files from $BUILD_FOLDER to $DEPLOY_FOLDER"
@@ -69,7 +62,7 @@ echo ""
 echo "************ PUSHING TO GIT ************"
 echo "Deploying with commit message:==> '$1'"
 #git status
-git add --all;git commit -m "$1"
+git add --all;git commit -m $1
 git push origin $BRANCH
 
 check_is_ok
@@ -88,4 +81,6 @@ echo ""
 echo ""
 echo "***************** DONE ******************"
 echo "*********** micha@SISITECH.com ***********"
-echo "*******************************************"
+echo "*************** THANK YOU ***************"
+echo ""
+echo ""

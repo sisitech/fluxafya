@@ -15,7 +15,7 @@ export class PharmacyComponent implements OnInit {
   adddrugform = false;
   drugs: any;
   drugname: any;
-
+ item:any
   drugelements: any = [];
   dosageelements: any = [];
 
@@ -42,7 +42,7 @@ export class PharmacyComponent implements OnInit {
 
   // tslint:disable-next-line:member-ordering
   drugArray = [];
-  onSelectDrug() {
+  onSelectDrug(any) {
     console.log(this.addDrug, 'compare', this.drugelements.length );
     const dt: any = {};
     const dArr = [];
