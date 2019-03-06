@@ -83,6 +83,8 @@ export class ProviderService {
     }
     // tslint:disable-next-line:class-name
     interface profileResponse {
+      first_name: string;
+      last_name: string;
       role: string;
     }
 
@@ -93,8 +95,8 @@ export class ProviderService {
       // online
       'username=' + username + '&password=' + password + '&grant_type=password&client_id=btAyFFBY16Af17BokR4xYM8i4oksX2aUgedOM2AQ',
      { headers: this.loginheaders })
-    .map(resp => {
-    // console.log(resp);
+    .mergeMap(resp => {
+      console.log(resp, 'jhghjgf');
       // get how long the access token will run untile expiring after signing in
       const tokenExpiryTime = resp.expires_in;
 
@@ -107,22 +109,22 @@ export class ProviderService {
 
       localStorage.setItem('refresh_token', JSON.stringify(refreshToken));
 
-      // const authheaders = new HttpHeaders(
-      //   {
-      //     'Content-Type': 'application/json',
-      //     'Authorization': 'Bearer ' + resp.access_token
-      //   });
-      // // // get the user profile
-      // const _userProfile = this.baseApiUrl + 'api/users/me';
-      // return this.http.get<profileResponse>(_userProfile, {headers: authheaders})
-      // .map(response => {
-      //   // store the user profile based on Observable Response
-      //   // console.log(response);
-      //   this.storeuserprofile(response);
-      //   });
-      //   // get the programs
-      //   // const _programUrl = this.baseApiUrl+'api/v1/programmes'
-      //   // return this.http.get(_programUrl)
+      const authheaders = new HttpHeaders(
+        {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + resp.access_token
+        });
+      // // get the user profile
+      const _userProfile = this.baseApiUrl + 'api/v1/users/me/profile';
+      return this.http.get<profileResponse>(_userProfile, {headers: authheaders})
+      .map(response => {
+        // store the user profile based on Observable Response
+        console.log(response);
+        this.storeuserprofile(response);
+        });
+        // get the programs
+        // const _programUrl = this.baseApiUrl+'api/v1/programmes'
+        // return this.http.get(_programUrl)
     }).catch(this.errorHandler)
     .catch(this.errorHandler);
   }
@@ -268,10 +270,40 @@ export class ProviderService {
     }
     /**END OF PASSWORDS**/
 
+    /** search a patient based on their phone number or id card */
+    searchPatient(identity){
+      const searchPatientUrl =  this.baseApiUrl
+
+      const token = this.getusertoken()
+      const authheaders = new HttpHeaders (
+        {
+          'Content-Type': 'application.json',
+          'Authorization': 'Bearer '+ token
+        }
+      );
+
+      return this.http.get(searchPatientUrl, {headers:authheaders})
+      .map(this.extractData)
+      .catch(this.errorHandler);
+    }
+
   private extractData(res: Response) {
     const body = res;
     return body || { };
   }
+
+    // get Categories
+    getPatients(){
+      const token = this.getusertoken();
+      const authheaders = new HttpHeaders(
+        {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + token
+        });
+      return this.http.get(this.baseApiUrl + 'api/v1/patients/', {headers: authheaders})
+      .map(this.extractData)
+      .catch(this.errorHandler);
+    }
 
 
   private errorHandler(error: any) {

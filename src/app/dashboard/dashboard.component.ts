@@ -91,43 +91,43 @@ export class DashboardComponent implements OnInit {
   }
 
   ngAfterViewInit(){
-    this.zone.runOutsideAngular(()=>{
-      // Create chart
-      let chart = am4core.create(document.getElementById("chartdiv"), am4charts.XYChart);
-      chart.paddingRight = 20;
+    // this.zone.runOutsideAngular(()=>{
+    //   // Create chart
+    //   let chart = am4core.create(document.getElementById("chartdiv"), am4charts.XYChart);
+    //   chart.paddingRight = 20;
       
-      chart.data = this.generateChartData();
+    //   chart.data = this.generateChartData();
       
-      let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-      dateAxis.baseInterval = {
-        "timeUnit": "minute",
-        "count": 1
-      };
-      dateAxis.tooltipDateFormat = "HH:mm, d MMMM";
+    //   let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+    //   dateAxis.baseInterval = {
+    //     "timeUnit": "minute",
+    //     "count": 1
+    //   };
+    //   dateAxis.tooltipDateFormat = "HH:mm, d MMMM";
       
-      let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-      valueAxis.tooltip.disabled = true;
-      valueAxis.title.text = "Plays";
+    //   let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+    //   valueAxis.tooltip.disabled = true;
+    //   valueAxis.title.text = "Plays";
       
-      let series = chart.series.push(new am4charts.LineSeries());
-      series.dataFields.dateX = "date";
-      series.dataFields.valueY = "visits";
-      series.tooltipText = "Views: [bold]{valueY}[/]";
-      series.fillOpacity = 0.3;
+    //   let series = chart.series.push(new am4charts.LineSeries());
+    //   series.dataFields.dateX = "date";
+    //   series.dataFields.valueY = "visits";
+    //   series.tooltipText = "Views: [bold]{valueY}[/]";
+    //   series.fillOpacity = 0.3;
       
       
-      chart.cursor = new am4charts.XYCursor();
-      chart.cursor.lineY.opacity = 0;
+    //   chart.cursor = new am4charts.XYCursor();
+    //   chart.cursor.lineY.opacity = 0;
 
-      let scrollbarX = new am4charts.XYChartScrollbar();
-      scrollbarX.series.push(series);
-      chart.scrollbarX = scrollbarX;
+    //   let scrollbarX = new am4charts.XYChartScrollbar();
+    //   scrollbarX.series.push(series);
+    //   chart.scrollbarX = scrollbarX;
       
       
-      chart.events.on("datavalidated", function () {
-       dateAxis.zoom({start:0.8, end:1});
-      });
-    })    
+    //   chart.events.on("datavalidated", function () {
+    //    dateAxis.zoom({start:0.8, end:1});
+    //   });
+    // })    
     
   }
 

@@ -26,7 +26,7 @@ const MENUITEMS = [
     name: 'MAIN'
   },
   {
-    state: '/',
+    state: '/dashboard',
     name: 'HOME',
     type: 'link',
     icon: 'ion-ios-speedometer'
@@ -283,7 +283,7 @@ const RECEPTION = [
     name: 'MAIN'
   },
   {
-    state: '/',
+    state: '/dashboard',
     name: 'HOME',
     type: 'link',
     icon: 'ion-ios-speedometer'
@@ -346,7 +346,7 @@ const PHARMACY = [
     name: 'MAIN'
   },
   {
-    state: '/',
+    state: '/dashboard',
     name: 'HOME',
     type: 'link',
     icon: 'ion-ios-speedometer'
@@ -403,7 +403,7 @@ const RECFINANCE = [
     name: 'MAIN'
   },
   {
-    state: '/',
+    state: '/dashboard',
     name: 'HOME',
     type: 'link',
     icon: 'ion-ios-speedometer'
@@ -479,7 +479,7 @@ const FINANCE = [
     name: 'MAIN'
   },
   {
-    state: '/',
+    state: '/dashboard',
     name: 'HOME',
     type: 'link',
     icon: 'ion-ios-speedometer'
@@ -536,7 +536,7 @@ const TRIAGE = [
     name: 'MAIN'
   },
   {
-    state: '/',
+    state: '/dashboard',
     name: 'HOME',
     type: 'link',
     icon: 'ion-ios-speedometer'
@@ -593,7 +593,7 @@ const PERSONAL = [
     name: 'MAIN'
   },
   {
-    state: '/',
+    state: '/dashboard',
     name: 'HOME',
     type: 'link',
     icon: 'ion-ios-speedometer'
@@ -650,7 +650,7 @@ const DOCTOR = [
     name: 'MAIN'
   },
   {
-    state: '/',
+    state: '/dashboard',
     name: 'HOME',
     type: 'link',
     icon: 'ion-ios-speedometer'
@@ -720,7 +720,7 @@ const LAB = [
     name: 'MAIN'
   },
   {
-    state: '/',
+    state: '/dashboard',
     name: 'HOME',
     type: 'link',
     icon: 'ion-ios-speedometer'
@@ -776,13 +776,15 @@ const LAB = [
 export class MenuService {
 
   getAll(): Menu[] {
-    let profile = JSON.parse(localStorage.getItem('userProfile'));
+    let profile = JSON.parse(localStorage.getItem('userprofile'));
 
-    if(profile.role == 'SA'){
+    if(profile.role == 'FA'){
+      return MENUITEMS;
+    } else if(profile.role == 'MFA'){
       return MENUITEMS;
     } else if(profile.role == 'R'){
       return RECEPTION;
-    } else if (profile.role == 'PH') {
+    } else if (profile.role == 'P') {
       return PHARMACY;
     } else if (profile.role == 'F') {
       return FINANCE;
