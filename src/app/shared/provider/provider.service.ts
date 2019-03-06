@@ -270,6 +270,23 @@ export class ProviderService {
     }
     /**END OF PASSWORDS**/
 
+    /** search a patient based on their phone number or id card */
+    searchPatient(identity){
+      const searchPatientUrl =  this.baseApiUrl
+
+      const token = this.getusertoken()
+      const authheaders = new HttpHeaders (
+        {
+          'Content-Type': 'application.json',
+          'Authorization': 'Bearer '+ token
+        }
+      );
+
+      return this.http.get(searchPatientUrl, {headers:authheaders})
+      .map(this.extractData)
+      .catch(this.errorHandler);
+    }
+
   private extractData(res: Response) {
     const body = res;
     return body || { };
