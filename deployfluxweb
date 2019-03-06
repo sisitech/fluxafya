@@ -72,7 +72,8 @@ echo ""
 echo ""
 echo "************ WEBFACTION UPDATE **********"
 echo "Updating webfaction instances..."
-sshpass -p '!#18S!s!t3ch:)' ssh sisitec@sisitech.com << EOF
+#sshpass -p '!#18S!s!t3ch:)' 
+ssh sisitec@sisitech.com << EOF
 	cd /home/sisitec/scripts/;
 	./updatefluxweb $BRANCH
 EOF

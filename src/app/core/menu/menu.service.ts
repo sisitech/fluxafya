@@ -202,6 +202,20 @@ const MENUITEMS = [
   },
   {
     type: 'title',
+    name: 'My Afya'
+  },
+  {
+    state: 'myafya',
+    name: 'My Afya',
+    type: 'link',
+    icon: 'ion-ios-box',
+
+  },
+  {
+    type: 'divider',
+  },
+  {
+    type: 'title',
     name: 'Admin Modules'
   },
   {
