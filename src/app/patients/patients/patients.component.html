@@ -13,7 +13,7 @@
                                 Patients in Queue
                             </div> -->
                                 <div class="table-responsive table-scroll">
-                                    <table class="table table-striped" *ngFor = "let item of allPatientsRegistered">
+                                    <table class="table table-striped">
                                         <thead>
                                             <tr>
                                                 <th></th>
@@ -34,9 +34,12 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr [routerLink]="['/labs/see-patient']">
-                                                <th>
+                                            <tr [routerLink]="['/labs/see-patient']" *ngFor = "let item of allPatientsRegistered; index as i">
+                                                <th *ngIf = "i == 0">
                                                     NEXT>
+                                                </th>
+                                                <th *ngIf = "i > 0">
+                                                    
                                                 </th>
                                                 <th scope="row">
                                                     {{item.id}}.

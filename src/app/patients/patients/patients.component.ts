@@ -12,18 +12,17 @@ export class PatientsComponent implements OnInit {
 
   ngOnInit() {
 
-    this.getInfluencerList();
+    this.getPatientsList();
   }
 
   allPatientsRegistered:any;
 
-  getInfluencerList() {
+  getPatientsList() {
     this.providerService.getPatients().subscribe(dat => {
       let data = dat as any;
       
 
       data.results.map(patients=>{
-
 
         return patients
       })

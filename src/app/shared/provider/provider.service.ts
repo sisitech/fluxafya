@@ -306,6 +306,19 @@ export class ProviderService {
     }
 
 
+    getTriagePatients(){
+      const token = this.getusertoken();
+      const authheaders = new HttpHeaders(
+        {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + token
+        });
+      return this.http.get(this.baseApiUrl + 'api/v1/patient-forms/', {headers: authheaders})
+      .map(this.extractData)
+      .catch(this.errorHandler);
+    }
+
+
   private errorHandler(error: any) {
     const err = error.error;
      if (err) {
