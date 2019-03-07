@@ -24,6 +24,7 @@ export class RegistrationComponent implements OnInit {
   patient_insurance:any;
   patient_insurance_number:any;
   patient_address:any;
+  patient_has_nhif:any;
 
   success:any;
   failed:any;
@@ -45,7 +46,7 @@ export class RegistrationComponent implements OnInit {
       national_id: [null, Validators.compose([Validators.required])],
       insurance_number: [],
       insurance: [],
-      nhif: [],
+      has_nhif: [],
       // registered_by: [],
       registered_hospital: []
     })
@@ -95,7 +96,7 @@ export class RegistrationComponent implements OnInit {
     this.patient_phone = e.phone;
     this.patient_dob = e.dob;
     this.patient_national_id = e.national_id
-
+    this.patient_has_nhif = e.has_nhif;
     if (e.insurance === null) {
       this.patient_insurance = 'N/A'
     } else {

@@ -298,6 +298,7 @@ export class ProviderService {
         national_id: patient.national_id,
         insurance: patient.insurance,
         phone: patient.phone,
+        has_nhif: patient.has_nhif,
         insurance_number: patient.insurance_number,
         registered_by: '',
         /** set id of the hospital and make sure you're the admin */

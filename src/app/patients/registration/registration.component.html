@@ -130,13 +130,15 @@
                     <label for="staticEmail" class="col-sm-2 col-form-label">Do you have NHIF ?</label>
                     <div class="col-sm-10">
                         <div class="form-check form-check-inline">
-                            <input *ngIf="!notRegistered" disabled class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                            <input formControlName="nhif" *ngIf="notRegistered" class="form-check-input" type="radio" name="nhif" id="inlineRadio1" value="option1">
+                            <input *ngIf="!notRegistered && patient_has_nhif==='true'" checked disabled class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="true">
+                            <input *ngIf="!notRegistered && patient_has_nhif==='false'" checked disabled class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="false">
+                            <input formControlName="has_nhif" *ngIf="notRegistered" class="form-check-input" type="radio" name="has_nhif" id="inlineRadio1" value="true">
                             <label class="form-check-label" for="inlineRadio1">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input *ngIf="!notRegistered" disabled class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                            <input formControlName="nhif" *ngIf="notRegistered" class="form-check-input" type="radio" name="nhif" id="inlineRadio2" value="option2">
+                            <input *ngIf="!notRegistered && patient_has_nhif==='false'" checked disabled class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="false">
+                            <input *ngIf="!notRegistered && patient_has_nhif==='true'" disabled class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="false">
+                            <input formControlName="has_nhif" *ngIf="notRegistered" class="form-check-input" type="radio" name="has_nhif" id="inlineRadio2" value="false">
                             <label class="form-check-label" for="inlineRadio2">No</label>
                         </div>
                     </div>
