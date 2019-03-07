@@ -272,7 +272,55 @@ export class ProviderService {
 
     /** search a patient based on their phone number or id card */
     searchPatient(identity){
-      const searchPatientUrl =  this.baseApiUrl
+      const searchPatientUrl =  this.baseApiUrl + 'api/v1/patients/?national_id=' + identity
+
+      const token = this.getusertoken()
+      const authheaders = new HttpHeaders (
+        {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer '+ token
+        }
+      );
+
+      return this.http.get(searchPatientUrl, {headers:authheaders})
+      .map(this.extractData)
+      .catch(this.errorHandler);
+    }
+
+    /** register a patient by receptionist if not in system */
+    registerPatient(patient){
+      console.log(patient)
+      const body = {
+        name: patient.name,
+        gender: patient.gender,
+        dob: patient.dob,
+        physical_address: patient.dob,
+        national_id: patient.national_id,
+        insurance: patient.insurance,
+        phone: patient.phone,
+        insurance_number: patient.insurance_number,
+        registered_by: '',
+        /** set id of the hospital and make sure you're the admin */
+        registered_hospital: '1'
+      }
+      const registerPatientUrl =  this.baseApiUrl + 'api/v1/patients/'
+
+      const token = this.getusertoken()
+      const authheaders = new HttpHeaders (
+        {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer '+ token
+        }
+      );
+
+      return this.http.post(registerPatientUrl, body, {headers:authheaders})
+      .map(this.extractData)
+      .catch(this.errorHandler);
+    }
+
+    /** create triage form at registration from receptionist */
+    createTriagePatientForm(patient_id) {
+      const createTriagePatientUrl =  this.baseApiUrl
 
       const token = this.getusertoken()
       const authheaders = new HttpHeaders (
@@ -282,7 +330,7 @@ export class ProviderService {
         }
       );
 
-      return this.http.get(searchPatientUrl, {headers:authheaders})
+      return this.http.post(createTriagePatientUrl, {headers:authheaders})
       .map(this.extractData)
       .catch(this.errorHandler);
     }
