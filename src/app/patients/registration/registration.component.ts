@@ -96,7 +96,13 @@ export class RegistrationComponent implements OnInit {
     this.patient_phone = e.phone;
     this.patient_dob = e.dob;
     this.patient_national_id = e.national_id
-    this.patient_has_nhif = e.has_nhif;
+    
+    if (e.has_nhif === true) {
+      this.patient_has_nhif = true;
+    } else {
+      this.patient_has_nhif = false;
+    }
+
     if (e.insurance === null) {
       this.patient_insurance = 'N/A'
     } else {
