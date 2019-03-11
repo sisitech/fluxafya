@@ -289,19 +289,29 @@ export class ProviderService {
 
     /** register a patient by receptionist if not in system */
     registerPatient(patient){
+      if (patient.insurance === 'None') {
+        patient.insurance = ''
+      }
+
+      interface patientFormResponse {
+        id: string;
+        registered_hospital: any;
+        registered_by: any;
+      }
+
+
       console.log(patient)
       const body = {
         name: patient.name,
         gender: patient.gender,
         dob: patient.dob,
-        physical_address: patient.dob,
+        physical_address: patient.physical_address,
         national_id: patient.national_id,
         insurance: patient.insurance,
         phone: patient.phone,
         has_nhif: patient.has_nhif,
         insurance_number: patient.insurance_number,
-        registered_by: '',
-        /** set id of the hospital and make sure you're the admin */
+        registered_by: '1',
         registered_hospital: '1'
       }
       const registerPatientUrl =  this.baseApiUrl + 'api/v1/patients/'
@@ -314,24 +324,46 @@ export class ProviderService {
         }
       );
 
-      return this.http.post(registerPatientUrl, body, {headers:authheaders})
+      return this.http.post<patientFormResponse>(registerPatientUrl, body, {headers:authheaders})
+      /** create triage form at registration from receptionist */
+      .mergeMap(resp => {
+        console.log(resp)
+        const body = {
+          status: 'N',
+          patient: resp.id,
+          hospital: resp.registered_hospital,
+          served_by: resp.registered_by
+        }
+        const createTriagePatientForm=  this.baseApiUrl + 'api/v1/patient-forms/'
+
+        const token = this.getusertoken()
+        const authheaders = new HttpHeaders (
+          {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer '+ token
+          }
+        );
+        console.log(token)
+
+        return this.http.post(createTriagePatientForm ,body, {headers:authheaders})
+      })
       .map(this.extractData)
       .catch(this.errorHandler);
     }
 
     /** create triage form at registration from receptionist */
-    createTriagePatientForm(patient_id) {
-      const createTriagePatientUrl =  this.baseApiUrl
+    createTriagePatientForm(resp) {
+      const createTriagePatientForm =  this.baseApiUrl + 'api/v1/patient-forms/'
 
       const token = this.getusertoken()
       const authheaders = new HttpHeaders (
         {
-          'Content-Type': 'application.json',
+          'Content-Type': 'application/json',
           'Authorization': 'Bearer '+ token
         }
       );
 
-      return this.http.post(createTriagePatientUrl, {headers:authheaders})
+      return this.http.post(createTriagePatientForm, resp,{headers:authheaders})
       .map(this.extractData)
       .catch(this.errorHandler);
     }

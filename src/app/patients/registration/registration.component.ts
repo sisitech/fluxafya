@@ -25,10 +25,16 @@ export class RegistrationComponent implements OnInit {
   patient_insurance_number:any;
   patient_address:any;
   patient_has_nhif:any;
+  patient_id:any;
+  registered_hospital:any;
+  recep_serving:any;
+  successShow:boolean = false;
+  
 
   success:any;
   failed:any;
   insurance_number_field:boolean = true;
+  noRecord:boolean = false;
 
   page:number = 1;
 
@@ -53,6 +59,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   ngOnInit() {
+    
   }
 
   onSelectAction(){
@@ -74,6 +81,7 @@ export class RegistrationComponent implements OnInit {
       if(data.results.length < 1) {
         this.listSearchedPatients = false;
         this.notRegistered = true;
+        this.noRecord = true;
         this.searchClicked = true;
       } else {
         this.patients = data.results;
@@ -87,10 +95,12 @@ export class RegistrationComponent implements OnInit {
   	// this.searchClicked = true;
   }
 
-  
   /** get selected patient details */
   fetchPatientDetails(e){
     console.log(e);
+    this.patient_id = e.id
+    this.registered_hospital = e.registered_hospital
+    this.recep_serving = e.registered_by
     this.patient_name = e.name;
     this.patient_gender = e.gender;
     this.patient_phone = e.phone;
@@ -126,18 +136,36 @@ export class RegistrationComponent implements OnInit {
   }
 
   /** Create Triage Patient Form */
-  sendToTriage(id) {
-    this.registerService.createTriagePatientForm(id).subscribe(resp => {
+  sendToTriage(id,registered_hospital,recep_serving ) {
+    let patient_status:any;
+    if (registered_hospital === '1') {
+      patient_status = 'R'
+    } else {
+      patient_status = 'V'
+    }
+
+    console.log(id, registered_hospital,recep_serving)
+    const body = {
+      status: patient_status,
+      patient: id,
+      hospital: registered_hospital,
+      served_by: recep_serving
+    }
+    this.registerService.createTriagePatientForm(body).subscribe(resp => {
+      console.log(resp)
       if(resp) {
         // hides the register form and removes the error if a patient is not found when searched
         this.notRegistered = true;
-        this.registerform.reset();
+        this.noRecord = false;
+        this.successShow = true;
         // add notification to show successful
-        this.success = 'Successful registered/ sent to triage'
-        this.route.navigate(['/triage/see-patient'])
+        this.success = 'Successfully sent patient to triage'
+       // this.route.navigate(['/triage/see-patient'])
       }
     }, error => {
-      this.failed = 'Failed to send to triage'
+      console.log(error)
+      this.noRecord = false;
+      this.failed = 'Failed to register and send patient to triage'
     })
   }
 
@@ -147,11 +175,17 @@ export class RegistrationComponent implements OnInit {
     this.registerService.registerPatient(this.registerform.value).subscribe(data => {
       console.log(data)
       let dat:any = data
-      if (data) {
-        this.sendToTriage(dat.id)
-      }
+      this.noRecord = false;
+      this.successShow = true;
+      this.registerform.reset()
+      this.success = 'Successful registered and sent patient to triage'
+      //if (data) {
+         //this.sendToTriage(dat.id)
+      //}
     },error => {
       console.log(error)
+      this.noRecord = false;
+      this.failed = 'Failed to register and send patient to triage'
     })
   }
 }
