@@ -3,9 +3,6 @@ import { Component, NgZone, OnInit } from '@angular/core';
 import * as shape from 'd3-shape';
 import * as d3 from 'd3';
 import { colorSets } from '@swimlane/ngx-charts/release/utils/color-sets';
-import * as am4core from "@amcharts/amcharts4/core";
-import * as am4charts from "@amcharts/amcharts4/charts";
-import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import {
   single,
   multi,
@@ -18,7 +15,6 @@ import {
 const monthName = new Intl.DateTimeFormat('en-us', { month: 'short' });
 const weekdayName = new Intl.DateTimeFormat('en-us', { weekday: 'short' });
 
-am4core.useTheme(am4themes_animated);
 
 @Component({
   selector: 'app-dashboard',
@@ -28,7 +24,6 @@ am4core.useTheme(am4themes_animated);
 export class DashboardComponent implements OnInit {
 
 
-  private chart: am4charts.XYChart;
   single: any[];
   multi: any[];
   dateData: any[];
@@ -132,11 +127,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnDestroy(){
-    this.zone.runOutsideAngular(()=>{
-      if(this.chart){
-        this.chart.dispose()
-      }
-    })
+    
   }
   
 
