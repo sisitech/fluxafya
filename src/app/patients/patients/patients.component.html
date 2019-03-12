@@ -11,7 +11,7 @@
                     <!-- <div class="card"> -->
                     <!-- <div class="card-header">
                                 Patients in Queue
-                            </div> -->
+                        </div> -->
                     <div class="table-responsive table-scroll">
                         <table class="table table-striped">
                             <thead>
@@ -34,170 +34,30 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr [routerLink]="['/labs/see-patient']">
-                                    <th>
+                                <tr [routerLink]="['/labs/see-patient']" *ngFor="let item of allPatientsRegistered; index as i">
+                                    <th *ngIf="i == 0">
                                         NEXT>
                                     </th>
+                                    <th *ngIf="i > 0">
+
+                                    </th>
                                     <th scope="row">
-                                        1.
+                                        {{item.id}}.
                                     </th>
                                     <td>
-                                        23870933423
+                                        {{item.national_id}}
                                     </td>
                                     <td>
-                                        Mark Otto
+                                        {{item.name}}
                                     </td>
                                     <!-- <td>
                                                     (254) 720
                                                 </td> -->
                                     <td>
-                                        Male
+                                        {{item.gender}}
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td></td>
-                                    <th scope="row">
-                                        2.
-                                    </th>
-                                    <td>
-                                        23870933424
-                                    </td>
-                                    <td>
-                                        Jane Thornton
-                                    </td>
-                                    <!-- <td>
-                                                    (254) 720
-                                                </td> -->
-                                    <td>
-                                        Female
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <th scope="row">
-                                        3.
-                                    </th>
-                                    <td>
-                                        23870933445
-                                    </td>
-                                    <td>
-                                        Larry the Bird
-                                    </td>
-                                    <!-- <td>
-                                                    (254) 720
-                                                </td> -->
-                                    <td>
-                                        Male
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <th scope="row">
-                                        4.
-                                    </th>
-                                    <td>
-                                        23870933193
-                                    </td>
-                                    <td>
-                                        Mark Otto
-                                    </td>
-                                    <!-- <td>
-                                                    (254) 720
-                                                </td> -->
-                                    <td>
-                                        Male
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <th scope="row">
-                                        5.
-                                    </th>
-                                    <td>
-                                        23870933423
-                                    </td>
-                                    <td>
-                                        Jane Thornton
-                                    </td>
-                                    <!-- <td>
-                                                    (254) 720
-                                                </td> -->
-                                    <td>
-                                        Female
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <th scope="row">
-                                        6.
-                                    </th>
-                                    <td>
-                                        23870933423
-                                    </td>
-                                    <td>
-                                        Larry the Bird
-                                    </td>
-                                    <!-- <td>
-                                                    (254) 720
-                                                </td> -->
-                                    <td>
-                                        Male
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <th scope="row">
-                                        7.
-                                    </th>
-                                    <td>
-                                        23870933423
-                                    </td>
-                                    <td>
-                                        Mark Otto
-                                    </td>
-                                    <!-- <td>
-                                                    (254) 720
-                                                </td> -->
-                                    <td>
-                                        Male
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <th scope="row">
-                                        8.
-                                    </th>
-                                    <td>
-                                        23870933423
-                                    </td>
-                                    <td>
-                                        Jane Thornton
-                                    </td>
-                                    <!-- <td>
-                                                    (254) 720
-                                                </td> -->
-                                    <td>
-                                        Female
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <th scope="row">
-                                        9.
-                                    </th>
-                                    <td>
-                                        23870933423
-                                    </td>
-                                    <td>
-                                        Larry the Bird
-                                    </td>
-                                    <!-- <td>
-                                                    (254) 720
-                                                </td> -->
-                                    <td>
-                                        Male
-                                    </td>
-                                </tr>
+
                             </tbody>
                         </table>
                         <!-- </div> -->

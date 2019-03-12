@@ -270,10 +270,134 @@ export class ProviderService {
     }
     /**END OF PASSWORDS**/
 
+    /** search a patient based on their phone number or id card */
+    searchPatient(identity){
+      const searchPatientUrl =  this.baseApiUrl + 'api/v1/patients/?national_id=' + identity
+
+      const token = this.getusertoken()
+      const authheaders = new HttpHeaders (
+        {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer '+ token
+        }
+      );
+
+      return this.http.get(searchPatientUrl, {headers:authheaders})
+      .map(this.extractData)
+      .catch(this.errorHandler);
+    }
+
+    /** register a patient by receptionist if not in system */
+    registerPatient(patient){
+      if (patient.insurance === 'None') {
+        patient.insurance = ''
+      }
+
+      interface patientFormResponse {
+        id: string;
+        registered_hospital: any;
+        registered_by: any;
+      }
+
+
+      console.log(patient)
+      const body = {
+        name: patient.name,
+        gender: patient.gender,
+        dob: patient.dob,
+        physical_address: patient.physical_address,
+        national_id: patient.national_id,
+        insurance: patient.insurance,
+        phone: patient.phone,
+        has_nhif: patient.has_nhif,
+        insurance_number: patient.insurance_number,
+        registered_by: '1',
+        registered_hospital: '1'
+      }
+      const registerPatientUrl =  this.baseApiUrl + 'api/v1/patients/'
+
+      const token = this.getusertoken()
+      const authheaders = new HttpHeaders (
+        {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer '+ token
+        }
+      );
+
+      return this.http.post<patientFormResponse>(registerPatientUrl, body, {headers:authheaders})
+      /** create triage form at registration from receptionist */
+      .mergeMap(resp => {
+        console.log(resp)
+        const body = {
+          status: 'N',
+          patient: resp.id,
+          hospital: resp.registered_hospital,
+          served_by: resp.registered_by
+        }
+        const createTriagePatientForm=  this.baseApiUrl + 'api/v1/patient-forms/'
+
+        const token = this.getusertoken()
+        const authheaders = new HttpHeaders (
+          {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer '+ token
+          }
+        );
+        console.log(token)
+
+        return this.http.post(createTriagePatientForm ,body, {headers:authheaders})
+      })
+      .map(this.extractData)
+      .catch(this.errorHandler);
+    }
+
+    /** create triage form at registration from receptionist */
+    createTriagePatientForm(resp) {
+      const createTriagePatientForm =  this.baseApiUrl + 'api/v1/patient-forms/'
+
+      const token = this.getusertoken()
+      const authheaders = new HttpHeaders (
+        {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer '+ token
+        }
+      );
+
+      return this.http.post(createTriagePatientForm, resp,{headers:authheaders})
+      .map(this.extractData)
+      .catch(this.errorHandler);
+    }
+
   private extractData(res: Response) {
     const body = res;
     return body || { };
   }
+
+    // get Categories
+    getPatients(){
+      const token = this.getusertoken();
+      const authheaders = new HttpHeaders(
+        {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + token
+        });
+      return this.http.get(this.baseApiUrl + 'api/v1/patients/', {headers: authheaders})
+      .map(this.extractData)
+      .catch(this.errorHandler);
+    }
+
+
+    getTriagePatients(){
+      const token = this.getusertoken();
+      const authheaders = new HttpHeaders(
+        {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + token
+        });
+      return this.http.get(this.baseApiUrl + 'api/v1/patient-forms/', {headers: authheaders})
+      .map(this.extractData)
+      .catch(this.errorHandler);
+    }
 
 
   private errorHandler(error: any) {
