@@ -34,7 +34,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr [routerLink]="['/labs/see-patient']" *ngFor = "let item of allPatientsTriage; index as i">
+                                            <tr *ngFor = "let item of allPatientsTriage; index as i" (click)="goToTriage(item)" >
                                                 <th *ngIf = "i == 0">
                                                     NEXT>
                                                 </th>

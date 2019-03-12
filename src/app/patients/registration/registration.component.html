@@ -203,6 +203,13 @@
                             <label *ngIf="!notRegistered" hidden class="form-check-label" for="inlineRadio1">Local Resident</label>
                             <label *ngIf="notRegistered" class="form-check-label" for="inlineRadio2">Visiting</label>
                         </div>
+                        <div class="form-check form-check-inline">
+                            <input *ngIf="!notRegistered" hidden active class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="visiting">
+                            <input formControlName="registered_hospital" *ngIf="notRegistered" active class="form-check-input" type="radio" name="registered_hospital" id="inlineRadio2" value="returning">
+                            <label *ngIf="!notRegistered" hidden class="form-check-label" for="inlineRadio1">Local Resident</label>
+                            <label *ngIf="!notRegistered" hidden class="form-check-label" for="inlineRadio2">Visiting</label>
+                            <label *ngIf="notRegistered" class="form-check-label" for="inlineRadio3">Returning</label>
+                        </div>
                     </div>
                 </div>
             </div>

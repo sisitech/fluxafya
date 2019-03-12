@@ -355,6 +355,7 @@ export class ProviderService {
     createTriagePatientForm(resp) {
       const createTriagePatientForm =  this.baseApiUrl + 'api/v1/patient-forms/'
 
+      console.log(resp)
       const token = this.getusertoken()
       const authheaders = new HttpHeaders (
         {
@@ -364,6 +365,36 @@ export class ProviderService {
       );
 
       return this.http.post(createTriagePatientForm, resp,{headers:authheaders})
+      .map(this.extractData)
+      .catch(this.errorHandler);
+    }
+
+    /** post data to triage for a patient */
+    registerTriage(resp,id) {
+      const createTriage=  this.baseApiUrl + 'api/v1/patient-forms/'+id+'/triages'
+
+      console.log(resp)
+      const body = {
+        weight: resp.weight,
+        temperature: resp.temperature,
+        bp_diastolic: resp.bp_diastolic,
+        bp_systolic: resp.bp_systolic,
+        symptoms:resp.symptoms,
+        allergies:resp.allergies,
+        urgency:resp.urgency,
+        //patient_form:,
+        //served_by:,
+      }
+
+      const token = this.getusertoken()
+      const authheaders = new HttpHeaders (
+        {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer '+ token
+        }
+      );
+
+      return this.http.post(createTriage, body,{headers:authheaders})
       .map(this.extractData)
       .catch(this.errorHandler);
     }

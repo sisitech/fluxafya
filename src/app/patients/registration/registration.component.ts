@@ -171,7 +171,6 @@ export class RegistrationComponent implements OnInit {
 
   /** Register new patient */
   registerPatient(){
-    console.log('jjaps')
     this.registerService.registerPatient(this.registerform.value).subscribe(data => {
       console.log(data)
       let dat:any = data
