@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProviderService } from 'src/app/shared/provider/provider.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-patients',
@@ -8,7 +9,7 @@ import { ProviderService } from 'src/app/shared/provider/provider.service';
 })
 export class PatientsComponent implements OnInit {
 
-  constructor(private providerService: ProviderService) { }
+  constructor(private providerService: ProviderService, private route: Router) { }
 
   ngOnInit() {
 
@@ -39,4 +40,8 @@ export class PatientsComponent implements OnInit {
 
   }
 
+  /**Norman */
+  goToTriage(e) {
+    this.route.navigate(['/triage/see-patient', {id: e.id}])
+  }
 }
