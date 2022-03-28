@@ -18,7 +18,7 @@ import { ProviderService } from 'src/app/shared/provider/provider.service';
 
 export class SigninComponent implements OnInit {
 
-   USERS = [
+  USERS = [
     {
       name: 'Dennis Sigei',
       role: 'FA',
@@ -97,7 +97,7 @@ export class SigninComponent implements OnInit {
   public success: any;
 
   public form: FormGroup;
-  constructor(private fb: FormBuilder, private router: Router, private loginService: ProviderService) {}
+  constructor(private fb: FormBuilder, private router: Router, private loginService: ProviderService) { }
 
   ngOnInit() {
     this.form = this.fb.group({
@@ -128,24 +128,27 @@ export class SigninComponent implements OnInit {
   //   this.router.navigate(['/']);
   // }
   onSubmit() {
-    // this.loading = true;
-   this.loginService.login(this.form.value.uname, this.form.value.password ).subscribe(data => {
-       const userprofile = JSON.parse(localStorage.getItem('userprofile'));
-        console.log(userprofile);
-       // this.loading = false;
-         // localStorage.setItem('token', data.access_token);
-        // this.form.reset();
-        // this.route.navigate(['/students']);
-         this.router.navigate(['/patients/register']);
-         // this.loading = false;
-     }, error => {
-       console.log(error);
-       let err = '';
-       if (error === 'invalid_grant') {
-         err = 'Username/Password mismatch';
-       } else {
-         err = 'Kindly check your internet connection or Kindly contact your server administrator';
-       }
-     });
+
+    this.router.navigate(['/patients/register']);
+
+    //   // this.loading = true;
+    //  this.loginService.login(this.form.value.uname, this.form.value.password ).subscribe(data => {
+    //      const userprofile = JSON.parse(localStorage.getItem('userprofile'));
+    //       console.log(userprofile);
+    //      // this.loading = false;
+    //        // localStorage.setItem('token', data.access_token);
+    //       // this.form.reset();
+    //       // this.route.navigate(['/students']);
+    //        this.router.navigate(['/patients/register']);
+    //        // this.loading = false;
+    //    }, error => {
+    //      console.log(error);
+    //      let err = '';
+    //      if (error === 'invalid_grant') {
+    //        err = 'Username/Password mismatch';
+    //      } else {
+    //        err = 'Kindly check your internet connection or Kindly contact your server administrator';
+    //      }
+    //    });
   }
 }

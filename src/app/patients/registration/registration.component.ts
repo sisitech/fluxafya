@@ -9,36 +9,36 @@ import { Router } from '@angular/router';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit {
-  searchform:FormGroup;
-  registerform:FormGroup;
-  searchClicked:boolean = false;
-  listSearchedPatients:boolean = false;
-  notRegistered:boolean = false;
-  search_failed:any;
-  patients:any = [];
-  patient_name:any;
-  patient_gender:any;
-  patient_phone:any;
-  patient_dob:any;
+  searchform: FormGroup;
+  registerform: FormGroup;
+  searchClicked: boolean = false;
+  listSearchedPatients: boolean = false;
+  notRegistered: boolean = false;
+  search_failed: any;
+  patients: any = [];
+  patient_name: any;
+  patient_gender: any;
+  patient_phone: any;
+  patient_dob: any;
   patient_national_id;
-  patient_insurance:any;
-  patient_insurance_number:any;
-  patient_address:any;
-  patient_has_nhif:any;
-  patient_id:any;
-  registered_hospital:any;
-  recep_serving:any;
-  successShow:boolean = false;
-  
+  patient_insurance: any;
+  patient_insurance_number: any;
+  patient_address: any;
+  patient_has_nhif: any;
+  patient_id: any;
+  registered_hospital: any;
+  recep_serving: any;
+  successShow: boolean = false;
 
-  success:any;
-  failed:any;
-  insurance_number_field:boolean = true;
-  noRecord:boolean = false;
 
-  page:number = 1;
+  success: any;
+  failed: any;
+  insurance_number_field: boolean = true;
+  noRecord: boolean = false;
 
-  constructor(private fb:FormBuilder, private registerService:ProviderService, private route:Router) { 
+  page: number = 1;
+
+  constructor(private fb: FormBuilder, private registerService: ProviderService, private router: Router, private route: Router) {
     this.searchform = this.fb.group({
       identity: [null, Validators.compose([Validators.required])]
     });
@@ -59,44 +59,46 @@ export class RegistrationComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+
   }
 
-  onSelectAction(){
+  onSelectAction() {
     console.log(this.registerform.get('insurance').value)
     let event = this.registerform.get('insurance').value
-    if(event === 'None') {
+    if (event === 'None') {
       this.insurance_number_field = false
     } else {
       this.insurance_number_field = true
     }
-    
+
   }
 
   /** search the patient based on their national id */
-  searchPatient(){
-    this.registerService.searchPatient(this.searchform.value.identity).subscribe(resp => {
-      let data:any = resp;
-      console.log(data);
-      if(data.results.length < 1) {
-        this.listSearchedPatients = false;
-        this.notRegistered = true;
-        this.noRecord = true;
-        this.searchClicked = true;
-      } else {
-        this.patients = data.results;
-        this.listSearchedPatients = true;
-      }
-    },error => {
-        this.search_failed = 'Failed to search. Kindly, check your interent connection'
-    })
+  searchPatient() {
+    this.router.navigate(['/patients/']);
+
+    // this.registerService.searchPatient(this.searchform.value.identity).subscribe(resp => {
+    //   let data:any = resp;
+    //   console.log(data);
+    //   if(data.results.length < 1) {
+    //     this.listSearchedPatients = false;
+    //     this.notRegistered = true;
+    //     this.noRecord = true;
+    //     this.searchClicked = true;
+    //   } else {
+    //     this.patients = data.results;
+    //     this.listSearchedPatients = true;
+    //   }
+    // },error => {
+    //     this.search_failed = 'Failed to search. Kindly, check your interent connection'
+    // })
 
     /** remove once endpoint is active */
-  	// this.searchClicked = true;
+    // this.searchClicked = true;
   }
 
   /** get selected patient details */
-  fetchPatientDetails(e){
+  fetchPatientDetails(e) {
     console.log(e);
     this.patient_id = e.id
     this.registered_hospital = e.registered_hospital
@@ -106,7 +108,7 @@ export class RegistrationComponent implements OnInit {
     this.patient_phone = e.phone;
     this.patient_dob = e.dob;
     this.patient_national_id = e.national_id
-    
+
     if (e.has_nhif === true) {
       this.patient_has_nhif = true;
     } else {
@@ -136,15 +138,15 @@ export class RegistrationComponent implements OnInit {
   }
 
   /** Create Triage Patient Form */
-  sendToTriage(id,registered_hospital,recep_serving ) {
-    let patient_status:any;
+  sendToTriage(id, registered_hospital, recep_serving) {
+    let patient_status: any;
     if (registered_hospital === '1') {
       patient_status = 'R'
     } else {
       patient_status = 'V'
     }
 
-    console.log(id, registered_hospital,recep_serving)
+    console.log(id, registered_hospital, recep_serving)
     const body = {
       status: patient_status,
       patient: id,
@@ -153,14 +155,14 @@ export class RegistrationComponent implements OnInit {
     }
     this.registerService.createTriagePatientForm(body).subscribe(resp => {
       console.log(resp)
-      if(resp) {
+      if (resp) {
         // hides the register form and removes the error if a patient is not found when searched
         this.notRegistered = true;
         this.noRecord = false;
         this.successShow = true;
         // add notification to show successful
         this.success = 'Successfully sent patient to triage'
-       // this.route.navigate(['/triage/see-patient'])
+        // this.route.navigate(['/triage/see-patient'])
       }
     }, error => {
       console.log(error)
@@ -170,18 +172,18 @@ export class RegistrationComponent implements OnInit {
   }
 
   /** Register new patient */
-  registerPatient(){
+  registerPatient() {
     this.registerService.registerPatient(this.registerform.value).subscribe(data => {
       console.log(data)
-      let dat:any = data
+      let dat: any = data
       this.noRecord = false;
       this.successShow = true;
       this.registerform.reset()
       this.success = 'Successful registered and sent patient to triage'
       //if (data) {
-         //this.sendToTriage(dat.id)
+      //this.sendToTriage(dat.id)
       //}
-    },error => {
+    }, error => {
       console.log(error)
       this.noRecord = false;
       this.failed = 'Failed to register and send patient to triage'

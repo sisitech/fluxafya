@@ -6,7 +6,7 @@ import { AuthLayoutComponent } from './core';
 export const AppRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'landing',
+    redirectTo: 'account/signin',
     pathMatch: 'full',
   },
   {
@@ -102,13 +102,13 @@ export const AppRoutes: Routes = [
         loadChildren: './ext-patient/ext-patient.module#ExtPatientModule'
       },
       {
-      path: 'labs',
-      loadChildren: './labs/labs.module#LabsModule'
-    },
-    {
-      path: 'admin',
-      loadChildren: './admin/admin.module#AdminModule'
-    },
+        path: 'labs',
+        loadChildren: './labs/labs.module#LabsModule'
+      },
+      {
+        path: 'admin',
+        loadChildren: './admin/admin.module#AdminModule'
+      },
       {
         path: 'profile',
         loadChildren: './social/social.module#SocialModule'

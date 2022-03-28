@@ -12,21 +12,21 @@ export class HeaderComponent {
   @Output()
   toggleSidenav = new EventEmitter<void>();
 
-  username:any;
-  userinitials:any;
+  username: any;
+  userinitials: any;
 
-  constructor(private router: Router){
+  constructor(private router: Router) {
     let profile = JSON.parse(localStorage.getItem('userprofile'));
     console.log(profile);
-  	this.username = profile.first_name + ' ' + profile.last_name ;
-  	let initialA = profile.first_name[0].charAt(0).toUpperCase()
-  	let initialB = profile.last_name[1].charAt(0).toUpperCase()
-  	this.userinitials = initialA+initialB
+    this.username = 'Flux Admin';
+    let initialA = 'F'
+    let initialB = 'A'
+    this.userinitials = initialA + initialB
 
   }
 
-  logout(){
-  	localStorage.clear()
-  	this.router.navigate(['account/signin'])
+  logout() {
+    localStorage.clear()
+    this.router.navigate(['account/signin'])
   }
 }
